@@ -1,0 +1,111 @@
+// Place your key bindings in this file to override the defaults
+[
+    // dismiss copilot suggestions without leaving vim insert mode
+    {
+        "key": "escape",
+        "command": "editor.action.inlineSuggest.hide",
+        "when": "vim.active && vim.mode == 'Insert' && (inlineSuggestionVisible || inlineEditIsVisible) && textInputFocus"
+    },
+    // dismiss intellisense suggestions without leaving vim insert mode
+    {
+        "key": "escape",
+        "command": "hideSuggestWidget",
+        "when": "vim.active && vim.mode == 'Insert' && suggestWidgetVisible && textInputFocus"
+    },
+    // remove the standard tab inline suggestion keybinding
+    {
+        "key": "tab",
+        "command": "-editor.action.inlineSuggest.commit",
+        "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+    },
+    // accept full inline & panel suggestion and ensure suggestion gets precedence over debugging
+    {
+        "key": "f5",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "(inlineEditIsVisible || inlineSuggestionVisible) && textInputFocus" 
+    },
+    {
+        "key": "f5",
+        "command": "workbench.action.debug.start",
+        "when": "debuggersAvailable && debugState == 'inactive' && ! inlineEditIsVisible && !inlineSuggestionVisible && !suggestWidgetVisible"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.start",
+        "when": "debuggersAvailable && debugState == 'inactive'"
+    },
+    {
+        "key": "f5",
+        "command": "workbench.action.debug.continue",
+        "when": "debugState == 'stopped' && !inlineEditIsVisible && !inlineSuggestionVisible && !suggestWidgetVisible"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.continue",
+        "when": "debugState == 'stopped'"
+    },
+    // accept next word inline suggestion and ensure suggestion gets precedence over debugging
+    {
+        "key": "f10",
+        "command": "editor.action.inlineSuggest.acceptNextWord",
+        "when": "cursorBeforeGhostText && inlineSuggestionVisible && !accessibilityModeEnabled && !editorReadonly" 
+    },
+    {
+        "key": "f10",
+        "command": "workbench.action.debug.stepOver",
+        "when": "debugState == 'stopped' && !inlineSuggestionVisible && !suggestWidgetVisible"
+    },
+    {
+        "key": "f10",
+        "command": "-workbench.action.debug.stepOver",
+        "when": "debugState == 'stopped'"
+    },
+    // accept next line inline suggestion and ensure suggestion gets precedence over debugging
+    {
+        "key": "f11",
+        "command": "editor.action.inlineSuggest.acceptNextLine",
+        "when": "cursorBeforeGhostText && inlineSuggestionVisible && !accessibilityModeEnabled && !editorReadonly" 
+    },
+    {
+        "key": "f11",
+        "command": "workbench.action.debug.stepInto",
+        "when": "debugState != 'inactive' && !inlineSuggestionVisible && !suggestWidgetVisible"
+    },
+    {
+        "key": "f11",
+        "command": "-workbench.action.debug.stepInto",
+        "when": "debugState != 'inactive'"
+    },
+    // ensure ctrl+n is available in the debug console for navigating suggestwidget
+    {
+        "key": "ctrl+n",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion || suggestWidgetVisible && inDebugRepl"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "down",
+        "command": "-selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    // ensure ctrl+p is available in the debug console for navigating suggestwidget
+    {
+        "key": "ctrl+p",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion || suggestWidgetVisible && inDebugRepl"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "up",
+        "command": "-selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    }
+]

@@ -1,0 +1,14 @@
+[Unit]
+Description=Idle manager
+# stops the service when niri stops
+PartOf=niri.service
+
+[Install]
+# starts the service when niri starts
+WantedBy=niri.service
+
+[Service]
+ExecStart=/usr/bin/swayidle -w \
+  timeout 300 'niri msg action power-off-monitors' \
+  timeout 300 'gtklock -s /home/jappe/.config/gtklock/style.css -D ""%A %d %B' \
+  timeout 900 'systemctl hibernate'

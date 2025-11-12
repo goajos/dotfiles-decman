@@ -1,0 +1,11 @@
+[Unit]
+Description=Dynamic Window Rules
+# stops the service when niri stops
+PartOf=niri.service
+
+[Install]
+# starts the service when niri starts
+WantedBy=niri.service
+
+[Service]
+ExecStart=/home/jappe/.config/niri/scripts/dynamic_window_rules.py

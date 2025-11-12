@@ -1,0 +1,11 @@
+[Unit]
+Description=mako
+# stops the service when niri stops
+PartOf=niri.service
+
+[Install]
+# starts the service when niri starts
+WantedBy=niri.service
+
+[Service]
+ExecStart=/usr/bin/mako

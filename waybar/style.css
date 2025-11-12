@@ -1,0 +1,93 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px; 
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip
+{
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 3px;
+    padding: 0px;
+    margin: 0px;
+}
+tooltip label 
+{
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+}
+
+.modules-center
+{
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 3px;
+}
+
+.modules-center > widget,
+.drawer-child
+{
+    border-radius: 3px;
+}
+
+.modules-center > widget > label,
+.drawer-child > label,
+box#privacy-item
+{
+    padding: 0 10px 0 10px;
+    border: 1px solid transparent;
+}
+
+box#privacy-item.audio-in
+{
+    /* less left padding for the audio in privacy module */
+    padding: 0 10px 0 5px;
+}
+
+box#power > widget > label,
+box#hardware > widget > label
+{
+    /* more right padding for the bottom group wrappers */
+    padding: 0 15px 0 10px;
+    border: 1px solid transparent;
+}
+
+label#custom-cpu,
+label#custom-igpu
+{
+    /* more right padding and no left padding for off center cpu icon */
+    padding: 0 15px 0 0;
+}
+
+label#custom-power-wrap,
+label#custom-hardware-wrap
+{
+    font-size: 25px;
+}
+
+box#power > widget > label:hover,
+box#hardware > widget > label:hover,
+/* .drawer-child > label:not(#cpu):not(#memory):hover, */
+.drawer-child > label:not(#custom-cpu):not(#custom-igpu):hover,
+label#wireplumber:hover
+{
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+    border-radius: 3px;
+    border-color: rgba(0, 0, 0, 0.5)
+}
+
+#privacy-item.screenshare {
+    color: green;
+}
+
+#privacy-item.audio-in {
+    color: red;
+}
+
+#privacy-item.audio-out {
+    color: orange;
+}

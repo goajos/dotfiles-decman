@@ -1,0 +1,11 @@
+[Unit]
+Description=idle-inhibitor
+# stops the service when niri stops
+PartOf=niri.service
+
+[Install]
+# starts the service when niri starts
+WantedBy=niri.service
+
+[Service]
+ExecStart=/home/jappe/Repositories/idle-inhibitor/.venv/bin/python3.14 .config/niri/scripts/idle_inhibitor.py
