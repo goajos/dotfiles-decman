@@ -1,5 +1,7 @@
 from decman import File, Module
 
+from config import USER
+
 
 class Nvim(Module):
     def __init__(self):
@@ -7,7 +9,7 @@ class Nvim(Module):
 
     def files(self) -> dict[str, File]:
         return {
-            "home/jappe/.config/nvim/init.lua": File(source_file="nvim/init.lua"),
+            f"/home/{USER}/.config/nvim/init.lua": File(source_file="nvim/init.lua"),
         }
 
     def pacman_packages(self) -> list[str]:

@@ -8,7 +8,7 @@ class Fonts(Module):
     # TODO: what to do with installing the fonts?
     def files(self) -> dict[str, File]:
         return {
-            "home/jappe/.config/fontconfig/fonts.conf": File(
+            "/home/jappe/.config/fontconfig/fonts.conf": File(
                 source_file="fonts/fonts.conf"
             ),
         }

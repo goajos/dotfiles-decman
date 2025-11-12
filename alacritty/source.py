@@ -1,5 +1,7 @@
 from decman import Directory, File, Module
 
+from config import USER
+
 
 class Alacritty(Module):
     def __init__(self):
@@ -7,14 +9,14 @@ class Alacritty(Module):
 
     def files(self) -> dict[str, File]:
         return {
-            "home/jappe/.config/alacritty/alacritty.toml": File(
+            f"/home/{USER}/.config/alacritty/alacritty.toml": File(
                 source_file="alacritty/alacritty.toml"
             ),
         }
 
     def directories(self) -> dict[str, Directory]:
         return {
-            "/home/jappe/.config/alacritty/themes": Directory(
+            f"/home/{USER}/.config/alacritty/themes": Directory(
                 source_directory="alacritty/themes"
             )
         }

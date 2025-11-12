@@ -2,11 +2,15 @@ import os
 
 import decman
 import decman.config
+from decman import Directory
 
 import bluetooth.source
 import sound.source
+from alacritty.source import Alacritty
+from config import USER
 from devel.python.source import Python
 from fonts.source import Fonts
+from fuzzel.source import Fuzzel
 from gaming.source import Gaming
 from mako.source import Mako
 from misc.source import Misc
@@ -15,8 +19,8 @@ from nvim.source import Nvim
 from openrgb.source import OpenRGB
 from waybar.source import Waybar
 
-os.environ["GNUPGHOME"] = "/home/jappe/.gnupug/"
-decman.config.makepkg_user = "jappe"
+os.environ["GNUPGHOME"] = f"/home/{USER}/.gnupug/"
+decman.config.makepkg_user = f"{USER}"
 
 # AUR packages (self-maintained with paru)
 decman.config.enable_fpm = False
@@ -47,7 +51,9 @@ base_util_packages = [
 decman.packages += base_system_packages + base_util_packages
 
 decman.modules += [
+    Alacritty(),
     Fonts(),
+    Fuzzel(),
     Gaming(),
     Mako(),
     Misc(),

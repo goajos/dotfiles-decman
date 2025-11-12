@@ -1,11 +1,7 @@
 [Unit]
 Description=swww daemon for the niri overview
-# stops the service when niri stops
-PartOf=niri.service
-
-[Install]
-# starts the service when niri starts
-WantedBy=niri.service
+BindsTo=niri.service
+After=niri.service
 
 [Service]
 ExecStart=/usr/bin/swww-daemon --namespace niri-overview

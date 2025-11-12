@@ -1,5 +1,7 @@
 from decman import Directory, File, Module
 
+from config import USER
+
 
 class Niri(Module):
     def __init__(self):
@@ -7,15 +9,32 @@ class Niri(Module):
 
     def files(self) -> dict[str, File]:
         return {
-            "home/jappe/.config/niri/config.kdl": File(source_file="niri/config.kdl"),
+            f"/home/{USER}/.config/niri/config.kdl": File(
+                source_file="niri/config.kdl"
+            ),
+            f"/home/{USER}/.config/systemd/user/niri.service": File(
+                source_file="systemd/user/niri.service"
+            ),
+            f"/home/{USER}/.config/systemd/user/dynamic-window-rules.service": File(
+                source_file="systemd/user/dynamic-window-rules.service"
+            ),
+            f"/home/{USER}/.config/systemd/user/polkit-agent.service": File(
+                source_file="systemd/user/polkit-agent.service"
+            ),
+            f"/home/{USER}/.config/systemd/user/swww-background.service": File(
+                source_file="systemd/user/swww-background.service"
+            ),
+            f"/home/{USER}/.config/systemd/user/swww-overview.service": File(
+                source_file="systemd/user/swww-overview.service"
+            ),
         }
 
     def directories(self) -> dict[str, Directory]:
         return {
-            "/home/jappe/.config/niri/scripts": Directory(
+            f"/home/{USER}/.config/niri/scripts": Directory(
                 source_directory="niri/scripts"
             ),
-            "/home/jappe/Backgrounds": Directory(source_directory="niri/backgrounds"),
+            f"/home/{USER}/Backgrounds": Directory(source_directory="niri/backgrounds"),
         }
 
     def pacman_packages(self) -> list[str]:
@@ -34,13 +53,16 @@ class Niri(Module):
             "xwayland-satellite",  # Xwayland outside your Wayland
         ]
 
-    def systemd_units(self) -> list[str]:
-        return [
-            "dynamic-window-rules.service",
-            "polkit-agent.service",
-            "swww-background.service",
-            "swww-overview.service",
-        ]
+    def systemd_user_units(self) -> dict[str, list[str]]:
+        return {
+            f"{USER}": [
+                "niri.service",
+                "dynamic-window-rules.service",
+                "polkit-agent.service",
+                "swww-background.service",
+                "swww-overview.service",
+            ]
+        }
 
 
 class NiriIdle(Module):
@@ -49,11 +71,17 @@ class NiriIdle(Module):
 
     def files(self) -> dict[str, File]:
         return {
-            "home/jappe/.config/niri/scripts/idle_inhibitor": File(
-                source_file="niri/scripts/idle_inhibitor.py"
-            ),
-            "home/jappe/.config/gtklock/style.css": File(
+            # f"/home/{USER}/.config/niri/scripts/idle_inhibitor": File(
+            #     source_file="niri/scripts/idle_inhibitor.py"
+            # ),
+            f"/home/{USER}/.config/gtklock/style.css": File(
                 source_file="niri/gtklock/style.css"
+            ),
+            f"/home/{USER}/.config/systemd/user/idle-inhibitor.service": File(
+                source_file="systemd/user/idle-inhibitor.service"
+            ),
+            f"/home/{USER}/.config/systemd/user/swayidle.service": File(
+                source_file="systemd/user/swayidle.service"
             ),
         }
 
@@ -63,8 +91,10 @@ class NiriIdle(Module):
             "swayidle",  # Idle management daemon for Wayland
         ]
 
-    def systemd_units(self) -> list[str]:
-        return [
-            "idle-inhibitor.service",
-            "swayidle.service",
-        ]
+    def systemd_user_units(self) -> dict[str, list[str]]:
+        return {
+            f"{USER}": [
+                "idle-inhibitor.service",
+                "swayidle.service",
+            ]
+        }

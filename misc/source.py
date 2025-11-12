@@ -1,5 +1,7 @@
 from decman import File, Module
 
+from config import USER
+
 
 class Misc(Module):
     def __init__(self):
@@ -8,16 +10,16 @@ class Misc(Module):
     def files(self) -> dict[str, File]:
         return {
             # vscode keybindings
-            "home/jappe/.config/Code/User/keybindings.json": File(
-                source_file="code/keybindings.json"
+            f"/home/{USER}/.config/Code/User/keybindings.json": File(
+                source_file="misc/code/keybindings.json"
             ),
             # vscode settings
-            "home/jappe/.config/Code/User/settings.json": File(
-                source_file="code/settings.json"
+            f"/home/{USER}/.config/Code/User/settings.json": File(
+                source_file="misc/code/settings.json"
             ),
             # minimal ruff pyproject.toml
-            "home/jappe/.config/ruff/pyproject.toml": File(
-                source_file="code/pyproject.toml"
+            f"/home/{USER}/.config/ruff/pyproject.toml": File(
+                source_file="misc/code/pyproject.toml"
             ),
         }
 

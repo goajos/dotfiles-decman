@@ -1,5 +1,7 @@
 from decman import File, Module
 
+from config import USER
+
 
 class Fuzzel(Module):
     def __init__(self):
@@ -7,7 +9,7 @@ class Fuzzel(Module):
 
     def files(self) -> dict[str, File]:
         return {
-            "home/jappe/.config/fuzzel/fuzzel.ini": File(
+            f"/home/{USER}/.config/fuzzel/fuzzel.ini": File(
                 source_file="fuzzel/fuzzel.ini"
             ),
         }

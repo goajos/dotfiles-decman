@@ -1,5 +1,7 @@
 from decman import File, Module
 
+from config import USER
+
 
 # TODO: set this up as a system service like bluetooth/NetworkManager?
 class OpenRGB(Module):
@@ -8,8 +10,11 @@ class OpenRGB(Module):
 
     def files(self) -> dict[str, File]:
         return {
-            "home/jappe/.config/OpenRGB/1s-white-breathing.orp": File(
+            f"/home/{USER}/.config/OpenRGB/1s-white-breathing.orp": File(
                 source_file="openrgb/1s-white-breathing.orp"
+            ),
+            f"/home/{USER}/.config/systemd/user/openrgb.service": File(
+                source_file="systemd/user/openrgb.service"
             ),
         }
 
@@ -18,7 +23,9 @@ class OpenRGB(Module):
             "openrgb",  # Open source RGB lighting control that doesn't depend on manufacturer software
         ]
 
-    def systemd_units(self) -> list[str]:
-        return [
-            "openrgb.service",
-        ]
+    def systemd_user_units(self) -> dict[str, list[str]]:
+        return {
+            f"{USER}": [
+                "openrgb.service",
+            ]
+        }
