@@ -10,8 +10,6 @@ class Niri(Module):
             "home/jappe/.config/niri/config.kdl": File(source_file="niri/config.kdl"),
         }
 
-    # TODO: add dynamic_window_rules.py to scripts folder
-    # TODO: add backgrounds to backgrounds folder
     def directories(self) -> dict[str, Directory]:
         return {
             "/home/jappe/.config/niri/scripts": Directory(
@@ -50,7 +48,6 @@ class NiriIdle(Module):
         super().__init__(name="niri_idle", enabled=True, version="1")
 
     def files(self) -> dict[str, File]:
-        # TODO: add idle_inhibitor.py to scripts folder
         return {
             "home/jappe/.config/niri/scripts/idle_inhibitor": File(
                 source_file="niri/scripts/idle_inhibitor.py"
