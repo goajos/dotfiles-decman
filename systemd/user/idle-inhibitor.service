@@ -4,4 +4,4 @@ BindsTo=niri.service
 After=niri.service
 
 [Service]
-ExecStart=/home/jappe/Repositories/idle-inhibitor/.venv/bin/python3.14 .config/niri/scripts/idle_inhibitor.py
+ExecStart=/home/jappe/.local/bin/idle-inhibitor

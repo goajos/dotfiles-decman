@@ -12,9 +12,6 @@ class Niri(Module):
             f"/home/{USER}/.config/niri/config.kdl": File(
                 source_file="niri/config.kdl"
             ),
-            f"/home/{USER}/.config/systemd/user/niri.service": File(
-                source_file="systemd/user/niri.service"
-            ),
             f"/home/{USER}/.config/systemd/user/dynamic-window-rules.service": File(
                 source_file="systemd/user/dynamic-window-rules.service"
             ),
@@ -32,9 +29,12 @@ class Niri(Module):
     def directories(self) -> dict[str, Directory]:
         return {
             f"/home/{USER}/.config/niri/scripts": Directory(
-                source_directory="niri/scripts"
+                source_directory="niri/scripts",
+                permissions=0o755,
             ),
-            f"/home/{USER}/Backgrounds": Directory(source_directory="niri/backgrounds"),
+            f"/home/{USER}/Pictures/Backgrounds": Directory(
+                source_directory="niri/backgrounds"
+            ),
         }
 
     def pacman_packages(self) -> list[str]:
@@ -71,9 +71,6 @@ class NiriIdle(Module):
 
     def files(self) -> dict[str, File]:
         return {
-            # f"/home/{USER}/.config/niri/scripts/idle_inhibitor": File(
-            #     source_file="niri/scripts/idle_inhibitor.py"
-            # ),
             f"/home/{USER}/.config/gtklock/style.css": File(
                 source_file="niri/gtklock/style.css"
             ),

@@ -1,6 +1,0 @@
-[Unit]
-Description=niri
-Upholds=waybar.service polkit-agent.service swww-background.service swww-overview.service dynamic-window-rules.service idle-inhibitor.service mako.service swayidle.service  
-
-[Service]
-ExecStart=/usr/bin/niri-session

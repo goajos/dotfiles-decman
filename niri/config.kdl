@@ -284,8 +284,16 @@ layout {
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+spawn-sh-at-startup "systemctl --user start waybar.service"
+spawn-sh-at-startup "systemctl --user start swww-background.service"
 spawn-sh-at-startup "swww img -n niri-background /home/jappe/Pictures/Backgrounds/dark-abstract.jpg"
+spawn-sh-at-startup "systemctl --user start swww-overview.service"
 spawn-sh-at-startup "swww img -n niri-overview /home/jappe/Pictures/Backgrounds/dark-abstract-5k.jpg"
+spawn-sh-at-startup "systemctl --user start dynamic-window-rules.service"
+spawn-sh-at-startup "systemctl --user start mako.service"
+spawn-sh-at-startup "systemctl --user start polkit-agent.service"
+spawn-sh-at-startup "systemctl --user start swayidle.service"
+spawn-sh-at-startup "systemctl --user start idle-inhibitor.service"
 
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
