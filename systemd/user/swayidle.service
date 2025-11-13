@@ -5,5 +5,4 @@ After=niri.service
 
 [Service]
 ExecStart=/usr/bin/swayidle -w \
-timeout 300 'niri msg action power-off-monitors && gtklock -s /home/jappe/.config/gtklock/style.css' \
-timeout 900 'systemctl hibernate'
+timeout 300 'niri msg action power-off-monitors && gtklock -s /home/jappe/.config/gtklock/style.css'
