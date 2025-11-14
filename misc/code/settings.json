@@ -64,5 +64,7 @@
     "vim.handleKeys": {
         "<C-k>": false, // vscode zen mode toggle ctrl+k+z
         "<C-b>": false, // vsocde sidebar toggle ctrl+b
+        "<C-j>": false, // vscode panel toggle ctrl+j
+        "<C-i>": false // vscode (inline) chat toggle ctrl+i
     },
 }
