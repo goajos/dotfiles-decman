@@ -45,6 +45,7 @@ base_system_packages = [
 
 base_util_packages = [
     "git",  # The fast distributed version control system
+    "openssh",  # SSH protocol implementation for remote login, command execution and file transfer
     "sudo",  # Give certain users the ability to run some commands as root
 ]
 
