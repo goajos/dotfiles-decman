@@ -1,4 +1,4 @@
-from decman import File, Module
+from decman import Directory, File, Module
 
 from config import USER
 

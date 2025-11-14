@@ -280,7 +280,6 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 //spawn-at-startup "waybar"
 //spawn-at-startup "mako"
-//spawn-at-startup "/home/jappe/.local/bin/dynamic_window_rules.py"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -294,6 +293,7 @@ spawn-sh-at-startup "systemctl --user start mako.service"
 spawn-sh-at-startup "systemctl --user start polkit-agent.service"
 spawn-sh-at-startup "systemctl --user start swayidle.service"
 spawn-sh-at-startup "systemctl --user start idle-inhibitor.service"
+spawn-sh-at-startup "systemctl --user start openrgb.service"
 
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.

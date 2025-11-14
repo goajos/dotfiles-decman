@@ -2,7 +2,7 @@
 Description=OpenRGB
 
 [Install]
-Wantedby=multi-user.target
+WantedBy=multi-user.target
 
 [Service]
-ExecStart=/usr/bin/openrgb --startminimized --profile "1s-white-breathing"
+ExecStart=/usr/bin/openrgb --server --profile "1s-white-breathing"
