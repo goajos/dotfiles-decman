@@ -20,6 +20,7 @@ from niri.source import Niri, NiriIdle
 from nvim.source import Nvim
 from openrgb.source import OpenRGB
 from pacman.source import Pacman
+from shell.source import Shell
 from waybar.source import Waybar
 
 # TODO: remove the 'jappe' dependencies in some of the service and config files?
@@ -69,6 +70,7 @@ decman.modules += [
     OpenRGB(),
     Pacman(),
     Python(),
+    Shell(),
     Waybar(),
 ]
 
