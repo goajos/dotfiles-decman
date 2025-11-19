@@ -22,6 +22,8 @@ from openrgb.source import OpenRGB
 from pacman.source import Pacman
 from waybar.source import Waybar
 
+# TODO: remove the 'jappe' dependencies in some of the service and config files?
+
 os.environ["GNUPGHOME"] = f"/home/{USER}/.gnupug/"
 decman.config.makepkg_user = f"{USER}"
 

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=PokerStars
+Exec=umu-run /home/jappe/Games/PokerStars.exe
+Icon=/home/jappe/Pictures/pokerstars.png

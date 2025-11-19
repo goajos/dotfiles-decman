@@ -1,5 +1,7 @@
 from decman import Directory, File, Module
 
+from config import USER
+
 
 # TODO: set the gnome fonts here or in Gnome module?
 class Fonts(Module):
@@ -8,7 +10,7 @@ class Fonts(Module):
 
     def files(self) -> dict[str, File]:
         return {
-            "/home/jappe/.config/fontconfig/fonts.conf": File(
+            f"/home/{USER}/.config/fontconfig/fonts.conf": File(
                 source_file="fonts/fonts.conf"
             ),
         }

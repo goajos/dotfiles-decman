@@ -1,9 +1,20 @@
-from decman import Module
+from decman import Directory, File, Module
+
+from config import USER
 
 
 class Gaming(Module):
     def __init__(self):
         super().__init__(name="gaming", enabled=True, version="1")
+
+    def directories(self) -> dict[str, Directory]:
+        return {
+            f"/home/{USER}/Pictures": Directory(source_directory="gaming/icons"),
+            f"/home/{USER}/.local/share/wine": Directory(
+                source_directory="gaming/wine",
+                permissions=0o755,
+            ),
+        }
 
     def pacman_packages(self) -> list[str]:
         return [
