@@ -1,9 +1,8 @@
-from decman import Directory, File, Module
+from decman import File, Module
 
 from config import USER
 
 
-# TODO: set this up as a system service like bluetooth/NetworkManager?
 class OpenRGB(Module):
     def __init__(self):
         super().__init__(name="openrgb", enabled=True, version="1")

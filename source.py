@@ -4,11 +4,13 @@ import decman
 import decman.config
 from decman import Directory
 
-import bluetooth.source
 import sound.source
 from alacritty.source import Alacritty
+from bluetooth.source import Bluetooth
 from config import USER
 from devel.python.source import Python
+
+# TODO: add angular source?
 from fonts.source import Fonts
 from fuzzel.source import Fuzzel
 from gaming.source import Gaming
@@ -17,6 +19,7 @@ from misc.source import Misc
 from niri.source import Niri, NiriIdle
 from nvim.source import Nvim
 from openrgb.source import OpenRGB
+from pacman.source import Pacman
 from waybar.source import Waybar
 
 os.environ["GNUPGHOME"] = f"/home/{USER}/.gnupug/"
@@ -52,6 +55,7 @@ decman.packages += base_system_packages + base_util_packages
 
 decman.modules += [
     Alacritty(),
+    Bluetooth(),
     Fonts(),
     Fuzzel(),
     Gaming(),
@@ -61,6 +65,7 @@ decman.modules += [
     NiriIdle(),
     Nvim(),
     OpenRGB(),
+    Pacman(),
     Python(),
     Waybar(),
 ]
