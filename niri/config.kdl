@@ -293,18 +293,33 @@ layout {
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+// waybar
 spawn-sh-at-startup "systemctl --user start waybar.service"
+
+// sbackgrounds
 spawn-sh-at-startup "systemctl --user start swww-background.service"
 spawn-sh-at-startup "swww img -n niri-background /home/jappe/Pictures/Backgrounds/dark-abstract.jpg"
 spawn-sh-at-startup "systemctl --user start swww-overview.service"
 spawn-sh-at-startup "swww img -n niri-overview /home/jappe/Pictures/Backgrounds/dark-abstract-5k.jpg"
+
+// floating windows
 spawn-sh-at-startup "systemctl --user start dynamic-window-rules.service"
+
+// mako
 spawn-sh-at-startup "systemctl --user start mako.service"
+
+// polkit
 spawn-sh-at-startup "systemctl --user start polkit-agent.service"
+
+// idle
 spawn-sh-at-startup "systemctl --user start swayidle.service"
 spawn-sh-at-startup "systemctl --user start idle-inhibitor.service"
+
+// openrgb profile
 spawn-sh-at-startup "systemctl --user start openrgb.service"
 
+// gnome settings
+spawn-sh-at-startup ".local/bin/dconf.sh"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.

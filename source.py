@@ -2,7 +2,6 @@ import os
 
 import decman
 import decman.config
-from decman import Directory
 
 from alacritty.source import Alacritty
 from bluetooth.source import Bluetooth
