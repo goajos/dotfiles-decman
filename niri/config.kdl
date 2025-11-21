@@ -4,12 +4,22 @@
 // https://yalter.github.io/niri/Configuration:-Introduction
 
 window-rule {
-  match title="GGPoker"
-  open-floating true
+    match title="GGPoker"
+    open-floating true
 }
 window-rule {
-  match title="PokerStars Lobby"
-  open-floating true
+    match title=r#"NLH"#
+    max-width 960
+    max-height 720
+}
+window-rule {
+    match title="PokerStars Lobby"
+    open-floating true
+}
+window-rule {
+    match title=r#"No Limit Hold"#
+    max-width 960
+    max-height 720
 }
 
 // Input device configuration.

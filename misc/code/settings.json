@@ -30,7 +30,6 @@
     "vim.enableNeovim": false,
     "vim.hlsearch": true,
     "vim.leader": "<Space>",
-    // TODO: custom keybindings?
     "vim.normalModeKeyBindingsNonRecursive": [
         
         {

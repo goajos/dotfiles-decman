@@ -9,11 +9,9 @@ class Misc(Module):
 
     def files(self) -> dict[str, File]:
         return {
-            # vscode keybindings
             f"/home/{USER}/.config/Code/User/keybindings.json": File(
                 source_file="misc/code/keybindings.json"
             ),
-            # vscode settings
             f"/home/{USER}/.config/Code/User/settings.json": File(
                 source_file="misc/code/settings.json"
             ),

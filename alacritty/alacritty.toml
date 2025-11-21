@@ -4,4 +4,4 @@ import = [
 ]
 
 [font]
-normal = { family = "JetBrainsMono Nerd Font" }
+normal = { family = "JetBrainsMono Nerd Font Mono" }

@@ -4,7 +4,6 @@ import decman
 import decman.config
 from decman import Directory
 
-import sound.source
 from alacritty.source import Alacritty
 from bluetooth.source import Bluetooth
 from config import USER
@@ -21,6 +20,7 @@ from nvim.source import Nvim
 from openrgb.source import OpenRGB
 from pacman.source import Pacman
 from shell.source import Shell
+from sound.source import Sound
 from waybar.source import Waybar
 
 # TODO: remove the 'jappe' dependencies in some of the service and config files?
@@ -71,6 +71,7 @@ decman.modules += [
     Pacman(),
     Python(),
     Shell(),
+    Sound(),
     Waybar(),
 ]
 

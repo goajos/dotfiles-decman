@@ -12,7 +12,6 @@ class Gaming(Module):
             f"/home/{USER}/Pictures": Directory(source_directory="gaming/icons"),
             f"/home/{USER}/.local/share/wine": Directory(
                 source_directory="gaming/wine",
-                permissions=0o755,
             ),
         }
 

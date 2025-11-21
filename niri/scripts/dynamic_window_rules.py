@@ -8,10 +8,10 @@ them afterward. This script is like open-float for those windows.
 Usage: fill in the RULES array below, then run the script.
 """
 
-from dataclasses import dataclass, field
 import json
 import os
 import re
+from dataclasses import dataclass, field
 from socket import AF_UNIX, SHUT_WR, socket
 
 
@@ -52,13 +52,11 @@ class Rule:
 RULES = [
     # window-rule {} with one match.
     # Rule([Match(title="Bitwarden", app_id="firefox")]),
-
     # window-rule {} with one match and one exclude.
     # Rule(
     #     [Match(title="rs")],
     #     exclude=[Match(app_id="Alacritty")],
     # ),
-
     # window-rule {} with two matches.
     # Rule(
     #     [
@@ -99,6 +97,15 @@ def float(id: int):
     send({"Action": {"MoveWindowToFloating": {"id": id}}})
 
 
+# def resize(id: int):
+#     send(
+#         {"Action": {"SetWindowWidth": {"id": id, "change": {"SetFixed": 1920 * 0.25}}}}
+#     )
+#     send(
+#         {"Action": {"SetWindowHeight": {"id": id, "change": {"SetFixed": 1080 * 0.25}}}}
+#     )
+
+
 def update_matched(win):
     win["matched"] = False
     if existing := windows.get(win["id"]):
@@ -109,6 +116,7 @@ def update_matched(win):
     if win["matched"] and not matched_before:
         print(f"floating title={win['title']}, app_id={win['app_id']}")
         float(win["id"])
+        # resize(win["id"])
 
 
 for line in file:
