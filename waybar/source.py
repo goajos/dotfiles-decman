@@ -1,4 +1,4 @@
-from decman import Directory, File, Module
+from decman import Directory, File, Module, sh
 
 from config import USER
 
@@ -41,3 +41,21 @@ class Waybar(Module):
                 "waybar.service",
             ]
         }
+
+
+class Perf(Module):
+    def __init__(self):
+        super().__init__(name="perf", enabled=False, version="1")
+
+    def files(self) -> dict[str, File]:
+        return {
+            "/etc/udev/rules.d/99-turbostat.rules": File(
+                source_file="waybar/perf/99-turbostat.rules"
+            ),
+        }
+
+    def on_enable(self) -> None:
+        sh("groupadd -r msr")
+        sh(f"usermod -a -G msr {USER}")
+        sh("setcap cap_perfmon=+ep /usr/bin/intel_gpu_top")
+        sh("setcap cap_sys_admin,cap_sys_rawio,cap_sys_nice=+ep /usr/bin/turbostat")

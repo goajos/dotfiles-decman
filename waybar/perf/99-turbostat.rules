@@ -1,0 +1,1 @@
+KERNEL=="msr[0-9]*", MODE="0440", GROUP="msr"

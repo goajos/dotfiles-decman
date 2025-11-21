@@ -20,7 +20,7 @@ from openrgb.source import OpenRGB
 from pacman.source import Pacman
 from shell.source import Shell
 from sound.source import Sound
-from waybar.source import Waybar
+from waybar.source import Perf, Waybar
 
 # TODO: remove the 'jappe' dependencies in some of the service and config files?
 
@@ -68,6 +68,7 @@ decman.modules += [
     Nvim(),
     OpenRGB(),
     Pacman(),
+    Perf(),
     Python(),
     Shell(),
     Sound(),
