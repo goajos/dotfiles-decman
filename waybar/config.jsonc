@@ -110,11 +110,11 @@
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 25,
-        "tooltip-format": "{title}",
+        "tooltip-format": "{title}\n{app_id}",
         "on-click": "activate",
         "ignore-list": [
         "Alacritty"
-        ]
+        ],
     },
     "group/hardware": {
         "orientation": "inherit",

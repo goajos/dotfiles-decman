@@ -3,6 +3,8 @@ from decman import Directory, File, Module
 from config import USER
 
 
+# TODO: find the proper way to set up these umu/wine apps
+# TODO: copy the exes from Games?
 class Gaming(Module):
     def __init__(self):
         super().__init__(name="gaming", enabled=True, version="1")
