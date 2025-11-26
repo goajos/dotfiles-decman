@@ -4,3 +4,4 @@ Exec=env PROTON_VERB=run umu-run "/home/jappe/Games/umu/umu-default/pfx/dosdevic
 Type=Application
 StartupNotify=true
 Icon=/home/jappe/Games/umu/umu-default/drive_c/proton_shortcuts/icons/64x64/apps/4E49_favicon.0.png
+StartupWMClass=steam_app_default

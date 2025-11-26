@@ -1,4 +1,4 @@
-from decman import Directory, Module
+from decman import Directory, File, Module
 
 from config import USER
 
@@ -7,6 +7,16 @@ from config import USER
 class Gaming(Module):
     def __init__(self):
         super().__init__(name="gaming", enabled=True, version="1")
+
+    def files(self) -> dict[str, File]:
+        return {
+            f"/home/{USER}/.local/share/applications/steam_app_default.desktop": File(
+                source_file="gaming/steam_app_default/steam_app_default.desktop"
+            ),
+            f"/home/{USER}/Pictures/steam.png": File(
+                source_file="gaming/steam_app_default/steam.png"
+            ),
+        }
 
     def directories(self) -> dict[str, Directory]:
         return {

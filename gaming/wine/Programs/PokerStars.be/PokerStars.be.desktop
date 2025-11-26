@@ -4,3 +4,4 @@ Exec=env PROTON_VERB=run umu-run "/home/jappe/Games/umu/umu-default/pfx/dosdevic
 Type=Application
 StartupNotify=true
 Icon=/home/jappe/Games/umu/umu-default/drive_c/proton_shortcuts/icons/256x256/apps/09F2_PokerStarsUninstall.0.png
+StartupWMClass=steam_app_default
