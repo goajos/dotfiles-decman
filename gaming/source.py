@@ -1,19 +1,17 @@
-from decman import Directory, File, Module
+from decman import Directory, Module
 
 from config import USER
 
 
-# TODO: find the proper way to set up these umu/wine apps
-# TODO: copy the exes from Games?
+# TODO: what to do with the .exe files?
 class Gaming(Module):
     def __init__(self):
         super().__init__(name="gaming", enabled=True, version="1")
 
     def directories(self) -> dict[str, Directory]:
         return {
-            f"/home/{USER}/Pictures": Directory(source_directory="gaming/icons"),
-            f"/home/{USER}/.local/share/wine": Directory(
-                source_directory="gaming/wine",
+            f"/home/{USER}/.local/share/applications/wine": Directory(
+                source_directory="gaming/wine"
             ),
         }
 

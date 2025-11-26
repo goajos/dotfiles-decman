@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=PokerStars.be
+Exec=env PROTON_VERB=run umu-run "/home/jappe/Games/umu/umu-default/pfx/dosdevices/c:/Program Files (x86)/PokerStars.BE/pokerstarsupdate.exe"
+Type=Application
+StartupNotify=true
+Icon=/home/jappe/Games/umu/umu-default/drive_c/proton_shortcuts/icons/256x256/apps/09F2_PokerStarsUninstall.0.png

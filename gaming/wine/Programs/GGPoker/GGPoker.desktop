@@ -1,5 +1,6 @@
 [Desktop Entry]
-Type=Application
 Name=GGPoker
-Exec=umu-run /home/jappe/Games/GGPoker.exe
-Icon=/home/jappe/Pictures/ggpoker.png
+Exec=env PROTON_VERB=run umu-run "/home/jappe/Games/umu/umu-default/pfx/dosdevices/c:/users/steamuser/AppData/Roaming/GGPCOM/bin/launcher.exe"
+Type=Application
+StartupNotify=true
+Icon=/home/jappe/Games/umu/umu-default/drive_c/proton_shortcuts/icons/64x64/apps/4E49_favicon.0.png
