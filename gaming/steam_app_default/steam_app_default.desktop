@@ -1,4 +1,7 @@
 [Desktop Entry]
+Name=SteamAppDefault
+Exec=
 Type=Application
 Icon=/home/jappe/Pictures/steam.png
+NoDisplay=true
 StartupWMClass=steam_app_default
