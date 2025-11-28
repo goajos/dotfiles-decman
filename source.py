@@ -6,6 +6,7 @@ import decman.config
 from alacritty.source import Alacritty
 from bluetooth.source import Bluetooth
 from config import USER
+from devel.javascript.source import JavaScript
 from devel.python.source import Python
 
 # TODO: add angular source?
@@ -61,6 +62,7 @@ decman.modules += [
     Fonts(),
     Fuzzel(),
     Gaming(),
+    JavaScript(),
     Mako(),
     Misc(),
     Niri(),
