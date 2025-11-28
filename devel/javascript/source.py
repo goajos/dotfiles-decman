@@ -10,5 +10,5 @@ class JavaScript(Module):
             "npm",  # JavaScript package manager
         ]
 
-    def after_update(self) -> None:
+    def on_enable(self) -> None:
         sh("npm install -g @angular/cli")

@@ -55,7 +55,7 @@ class Perf(Module):
         }
 
     def on_enable(self) -> None:
-        sh("groupadd -r msr")
+        sh("groupadd -fr msr")
         sh(f"usermod -a -G msr {USER}")
         sh("setcap cap_perfmon=+ep /usr/bin/intel_gpu_top")
         sh("setcap cap_sys_admin,cap_sys_rawio,cap_sys_nice=+ep /usr/bin/turbostat")

@@ -3,6 +3,7 @@ from decman import Directory, File, Module
 from config import USER
 
 
+# TODO: run fc-cache command?
 class Fonts(Module):
     def __init__(self):
         super().__init__(name="fonts", enabled=True, version="1")

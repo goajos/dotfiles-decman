@@ -6,6 +6,7 @@ import decman.config
 from alacritty.source import Alacritty
 from bluetooth.source import Bluetooth
 from config import USER
+from devel.docker.source import Docker
 from devel.javascript.source import JavaScript
 from devel.python.source import Python
 
@@ -24,6 +25,7 @@ from sound.source import Sound
 from waybar.source import Perf, Waybar
 
 # TODO: remove the 'jappe' dependencies in some of the service and config files?
+# TODO: shebangs for scripts? user/bin/env bash
 
 os.environ["GNUPGHOME"] = f"/home/{USER}/.gnupug/"
 decman.config.makepkg_user = f"{USER}"
@@ -59,6 +61,7 @@ decman.packages += base_system_packages + base_util_packages
 decman.modules += [
     Alacritty(),
     Bluetooth(),
+    Docker(),
     Fonts(),
     Fuzzel(),
     Gaming(),
