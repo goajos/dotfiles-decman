@@ -13,7 +13,7 @@ class Docker(Module):
         ]
 
     def on_enable(self) -> None:
-        sh("groupadd -fr docker")
+        sh("groupadd -r docker")
         sh(f"usermod -a -G docker {USER}")
 
     def systemd_units(self) -> list[str]:
