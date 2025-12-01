@@ -3,7 +3,7 @@ from decman import Directory, File, Module
 from config import USER
 
 
-# TODO: what to do with the .exe files?
+# TODO: what to do with the .exe files/installers?
 class Gaming(Module):
     def __init__(self):
         super().__init__(name="gaming", enabled=True, version="1")

@@ -9,8 +9,6 @@ from config import USER
 from devel.docker.source import Docker
 from devel.javascript.source import JavaScript
 from devel.python.source import Python
-
-# TODO: add angular source?
 from fonts.source import Fonts
 from fuzzel.source import Fuzzel
 from gaming.source import Gaming
