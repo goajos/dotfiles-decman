@@ -1,0 +1,8 @@
+[Unit]
+Description=auto connect bluetooth
+BindsTo=niri.service
+After=niri.service
+
+[Service]
+ExecStart=/home/jappe/.local/bin/auto_connect.py
+

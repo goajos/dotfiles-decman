@@ -9,7 +9,8 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-alias decman='decman --source /home/jappe/Repositories/dotfiles/source.py'
+# run decman with the correct source file
+alias decman='decman --source /home/jappe/Repositories/dotfiles/source.py --debug'
 alias vim='nvim'
 
 function yay()

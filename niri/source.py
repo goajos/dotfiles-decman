@@ -65,6 +65,7 @@ class Niri(Module):
         }
 
 
+# TODO: how to auto set up the idle-inhibitor script?
 class NiriIdle(Module):
     def __init__(self):
         super().__init__(name="niri_idle", enabled=True, version="1")

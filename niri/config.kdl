@@ -60,6 +60,9 @@ spawn-sh-at-startup "systemctl --user start openrgb.service"
 // gnome settings
 spawn-sh-at-startup ".local/bin/dconf.sh"
 
+// auto connect bluetooth
+spawn-sh-at-startup "systemctl --user start auto-connect.service"
+
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
