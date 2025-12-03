@@ -3,14 +3,8 @@ import subprocess
 import time
 
 MAC = "FC:91:5D:6C:BB:C5"
-CHECK_INTERVAL = 5
-
-
-def ensure_power_and_trust(mac_address: str):
-    subprocess.run(["bluetoothctl", "power", "on"])
-    subprocess.run(["bluetoothctl", "agent", "on"])
-    subprocess.run(["bluetoothctl", "default-agent"])
-    subprocess.run(["bluetoothctl", "trust", mac_address])
+CONNECT_COOLDOWN = 5
+SLEEP_TIMER = 1
 
 
 def is_connected(mac_address: str) -> bool:
@@ -31,29 +25,35 @@ def device_seen(mac_address: str) -> bool:
     return mac_address in result.stdout
 
 
-def scan_for_device(mac_address: str) -> bool:
-    subprocess.run(["bluetoothctl", "scan", "on"])
-    while True:
-        if device_seen(mac_address):
-            break
+def ensure_power_and_agent():
+    subprocess.run(["bluetoothctl", "power", "on"])
+    subprocess.run(["bluetoothctl", "agent", "on"])
+    subprocess.run(["bluetoothctl", "default-agent"])
 
-    subprocess.run(["bluetoothctl", "scan", "off"])
-    return device_seen(mac_address=mac_address)
+
+def trust_device(mac_address: str):
+    subprocess.run(["bluetoothctl", "trust", mac_address])
+
+
+def scan_on():
+    subprocess.run(["bluetoothctl", "scan", "on"])
 
 
 def main():
-    ensure_power_and_trust(mac_address=MAC)
-    while True:
-        if is_connected(MAC):
-            time.sleep(CHECK_INTERVAL)
-            continue
+    ensure_power_and_agent()
+    trust_device(mac_address=MAC)
+    scan_on()
 
-        seen = scan_for_device(mac_address=MAC)
-        if seen:
-            subprocess.run(["bluetoothctl", "connect", MAC])
-            time.sleep(CHECK_INTERVAL)
+    while True:
+        if device_seen(mac_address=MAC):
+            if not is_connected(mac_address=MAC):
+                print(f"auto-connect: Connecting to device {MAC}...")
+                subprocess.run(["bluetoothctl", "connect", MAC])
+                time.sleep(CONNECT_COOLDOWN)
+            else:
+                time.sleep(SLEEP_TIMER)
         else:
-            time.sleep(CHECK_INTERVAL)
+            time.sleep(SLEEP_TIMER)
 
 
 if __name__ == "__main__":
