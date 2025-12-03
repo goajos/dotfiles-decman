@@ -12,8 +12,8 @@ PS1='[\u@\h \W]\$ '
 
 # run decman with the correct source file
 alias decman='decman --source /home/jappe/Repositories/dotfiles/source.py'
-alias vim='nvim'
 
+alias vim='nvim'
 # bash vim mode
 set -o vi
 bind ' set show-mode-in-prompt on'

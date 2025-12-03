@@ -15,6 +15,9 @@ class Misc(Module):
             f"/home/{USER}/.config/Code/User/settings.json": File(
                 source_file="misc/code/settings.json"
             ),
+            f"/home/{USER}/.config/discord/settings.json": File(
+                source_file="misc/discord/settings.json"
+            ),
             # minimal ruff pyproject.toml
             f"/home/{USER}/.config/ruff/pyproject.toml": File(
                 source_file="misc/code/pyproject.toml"
