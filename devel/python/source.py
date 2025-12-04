@@ -1,7 +1,6 @@
 from decman import Module
 
 
-# TODO: uv shebang?
 class Python(Module):
     def __init__(self):
         super().__init__(name="python", enabled=True, version="1")
