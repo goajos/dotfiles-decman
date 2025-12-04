@@ -15,8 +15,6 @@ alias decman='decman --source /home/jappe/Repositories/dotfiles/source.py'
 
 alias vim='nvim'
 # bash vim mode
-set -o vi
-bind ' set show-mode-in-prompt on'
 export EDITOR='nvim' # opens current folder in nvim with 'v'
 
 function yay()

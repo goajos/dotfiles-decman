@@ -5,3 +5,8 @@ import = [
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font Mono" }
+
+[keyboard]
+bindings = [
+    { key = "Enter", mods = "Super", action = "ToggleFullscreen" }
+    ]
