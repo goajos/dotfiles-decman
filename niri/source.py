@@ -65,7 +65,9 @@ class Niri(Module):
         }
 
 
+# # uv tool install --editable .
 # TODO: how to auto set up the idle-inhibitor script?
+# TODO: how to auto set up the bt-auto-connect-script?
 class NiriIdle(Module):
     def __init__(self):
         super().__init__(name="niri_idle", enabled=True, version="1")

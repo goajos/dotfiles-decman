@@ -4,5 +4,5 @@ BindsTo=niri.service
 After=niri.service
 
 [Service]
-ExecStart=/home/jappe/.local/bin/auto_connect.py
+ExecStart=/home/jappe/.local/bin/bt-auto-connect
 

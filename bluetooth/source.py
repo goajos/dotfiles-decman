@@ -10,11 +10,8 @@ class Bluetooth(Module):
     def files(self) -> dict[str, File]:
         return {
             "/etc/bluetooth/main.conf": File(source_file="bluetooth/main.conf"),
-            f"/home/{USER}/.local/bin/auto_connect.py": File(
-                source_file="bluetooth/scripts/auto_connect.py", permissions=0o755
-            ),
-            f"/home/{USER}/.config/systemd/user/auto-connect.service": File(
-                source_file="systemd/user/auto-connect.service"
+            f"/home/{USER}/.config/systemd/user/bt-auto-connect.service": File(
+                source_file="systemd/user/bt-auto-connect.service"
             ),
         }
 
@@ -29,5 +26,5 @@ class Bluetooth(Module):
 
     def systemd_user_units(self) -> dict[str, list[str]]:
         return {
-            f"{USER}": ["auto-connect.service"],
+            f"{USER}": ["bt-auto-connect.service"],
         }

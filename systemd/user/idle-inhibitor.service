@@ -1,5 +1,5 @@
 [Unit]
-Description=idle-inhibitor
+Description=idle-inhibitor for niri
 BindsTo=niri.service
 After=niri.service
 
