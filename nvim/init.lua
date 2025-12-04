@@ -1,9 +1,9 @@
-local opt = vim.opt
-    
-opt.relativenumber = true
+let mapleader = " "
 
-opt.autoindent    = true -- auto indent next line
-opt.expandtab     = true -- tabs are spaces
-opt.shiftwidth    = 4
-opt.tabstop       = 4
-opt.softtabstop   = 4
+local opt = vim.opt
+
+opt.number = true
+opt.relativenumber = true
+opt.hlsearch = true
+opt.ignorecase = true
+opt.incsearch = true
