@@ -29,5 +29,6 @@ class Nvim(Module):
             "neovim",  # Fork of Vim aiming to improve user experience, plugins, and GUIs
             "ripgrep",  # A search tool that combines the usability of ag with the raw speed of grep
             "ruff",  # An extremely fast Python linter, written in Rust
+            "rust-analyzer",  # Rust compiler front-end for IDEs
             "typescript-language-server",  # Language Server Protocol (LSP) implementation for TypeScript using tsserver
         ]

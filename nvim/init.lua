@@ -16,6 +16,7 @@ o.winborder = "rounded" -- set rounded border for hover popup
 vim.lsp.enable({
     "lua_ls",
     "ruff",
+    "rust_analyzer",
     "ts_ls",
     "ty",
 })
