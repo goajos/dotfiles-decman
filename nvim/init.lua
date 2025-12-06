@@ -7,3 +7,4 @@ opt.relativenumber = true
 opt.hlsearch = true
 opt.ignorecase = true
 opt.incsearch = true
+opt.noswapfile = true

@@ -14,7 +14,6 @@
         "format": "󰂲",
         "format-connected": "",
         "format-connected-battery": "",
-        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
         "tooltip-format": "{controller_alias}\t{controller_address}",
         "tooltip-format-connected": "{num_connections} connected\t{controller_alias}\t{controller_address}\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
@@ -125,26 +124,14 @@
         },
         "modules": [
             "custom/hardware-wrap",
-            // "memory",
-            // "cpu"
             "custom/cpu",
             "custom/igpu"
         ]
     },
     "custom/hardware-wrap": {
-        // "format": "",
         "format": "",
         "tooltip-format": "Hardware stats"
     },
-//     "memory": {
-//         "interval": 1,
-//         "format": " {percentage}%",
-//         "tooltip-format": "{used:0.1f}Gb/{total:0.1f}Gb RAM\n{swapUsed:0.1f}/{swapTotal:0.1f}Gb Swap" 
-//    },
-    // "cpu": {
-    //     "interval": 1,
-    //     "format": " {load}"
-    // }
     "custom/cpu": {
         "exec": "uv run /home/jappe/.config/waybar/scripts/cpu_monitor.py",
         "return-type": "json",
@@ -158,50 +145,3 @@
         "tooltip": true
     },
 }]
-
-//     "group/disk-group":{
-//         "orientation": "inherit",
-//         "drawer": {
-//             "transition-left-to-right": true,
-//             "children-class": "drawer-child",
-//             "click-to-reveal": true
-//         },
-//         "modules": [
-//             "custom/diskWrap",
-//             "disk#root",
-//             "custom/home",
-//             "custom/snapshots",
-//             "custom/cache",
-//             "custom/log"
-//         ]
-//     },
-//     "custom/diskWrap":{
-//         "format": "󰆼",
-//         "tooltip-format": "Disk stats"
-//     },
-//     "disk#root": {
-//         "interval": 300,
-//         "path": "/",
-//         "format": "{used}/{total} ({percentage_used}%)"
-//     },
-//     "custom/home": {
-//         "interval": 300,
-//         "exec": "btrfs filesystem du -s /home | awk 'NR==2 {print $1}'",
-//         "format": "Home: {}"
-//     },
-//     "custom/snapshots": {
-//         "interval": 300,
-//         "exec": "btrfs filesystem du -s /.snapshots | awk 'NR==2 {print $1}'",
-//         "format": "Snapshots: {}"
-//     },
-//     "custom/cache": {
-//         "interval": 300,
-//         "exec": "btrfs filesystem du -s /var/cache | awk 'NR==2 {print $1}'",
-//         "format": "Cache: {}"
-//     },
-//     "custom/log": {
-//         "interval": 300,
-//         "exec": "btrfs filesystem du -s /var/log | awk 'NR==2 {print $1}'",
-//         "format": "Log: {}"
-//     }
-// }]
