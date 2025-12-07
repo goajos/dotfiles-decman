@@ -22,6 +22,7 @@ from shell.source import Shell
 from sound.source import Sound
 from waybar.source import Perf, Waybar
 
+# TODO: how to properly set up the uv executables for user services?
 # TODO: remove the 'jappe' dependencies in some of the service and config files?
 # TODO: shebangs for scripts? user/bin/env bash
 

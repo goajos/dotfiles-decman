@@ -3,7 +3,6 @@ from decman import Directory, File, Module
 from config import USER
 
 
-# TODO: set up nvim properly
 class Nvim(Module):
     def __init__(self):
         super().__init__(name="nvim", enabled=True, version="1")

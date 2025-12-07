@@ -32,10 +32,14 @@ layout {
     }
 }
 
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+
 // waybar
 spawn-sh-at-startup "systemctl --user start waybar.service"
 
-// sbackgrounds
+// backgrounds
 spawn-sh-at-startup "systemctl --user start swww-background.service"
 spawn-sh-at-startup "swww img -n niri-background /home/jappe/Pictures/Backgrounds/dark-abstract.jpg"
 spawn-sh-at-startup "systemctl --user start swww-overview.service"
