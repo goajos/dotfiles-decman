@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 """
 Like open-float, but dynamically. Floats a window when it matches the rules.
 

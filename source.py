@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os
 
 import decman
@@ -22,9 +23,10 @@ from shell.source import Shell
 from sound.source import Sound
 from waybar.source import Perf, Waybar
 
+# TODO: git module with agent + token setup?
 # TODO: how to properly set up the uv executables for user services?
 # TODO: remove the 'jappe' dependencies in some of the service and config files?
-# TODO: shebangs for scripts? user/bin/env bash
+# TODO: shebangs for scripts? /usr/bin/env bash
 
 os.environ["GNUPGHOME"] = f"/home/{USER}/.gnupug/"
 decman.config.makepkg_user = f"{USER}"

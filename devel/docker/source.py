@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from decman import Module, sh
 
 from config import USER

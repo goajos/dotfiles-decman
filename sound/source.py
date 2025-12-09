@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from decman import File, Module
 
 from config import USER
@@ -10,7 +11,7 @@ class Sound(Module):
     def files(self) -> dict[str, File]:
         return {
             f"/home/{USER}/.local/bin/wp-vol": File(
-                source_file="sound/wp-vol", permissions=0o755
+                source_file="sound/wp-vol", permissions=0o755, owner=USER
             )
         }
 

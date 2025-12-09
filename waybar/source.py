@@ -1,9 +1,11 @@
+#!/usr/bin/env python
 from decman import Directory, File, Module, sh
 
 from config import USER
 
 
 # TODO: make privacy icons interactable (mute mic, disable screensharing,...)
+# TODO: clickable waybar module to run decman?
 class Waybar(Module):
     def __init__(self):
         super().__init__(name="waybar", enabled=True, version="1")

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from decman import Directory, File, Module
 
 from config import USER
@@ -14,7 +15,7 @@ class Fonts(Module):
                 source_file="fonts/fonts.conf"
             ),
             f"/home/{USER}/.local/bin/dconf.sh": File(
-                source_file="fonts/dconf.sh", permissions=0o755
+                source_file="fonts/dconf.sh", permissions=0o755, owner=USER
             ),
         }
 
