@@ -2,7 +2,7 @@
 [{
     "layer": "top",
     "height": 25,
-    "modules-center": ["wireplumber","bluetooth", "clock", "network", "privacy", "privacy#audioin"],
+    "modules-center": ["wireplumber","bluetooth", "clock", "custom/decman", "network", "privacy", "privacy#audioin"],
     "wireplumber": {
         "format": "{icon}",
         "format-muted": "󰖁",
@@ -24,6 +24,11 @@
         "format": "{:%H:%M}",
         "tooltip-format": "{:%Y-%m-%d}",
         "timezone": "Europe/Brussels"
+    },
+    "custom/decman": {
+        "format": "󰔱",
+        "tooltip-format": "Run decman to update the system",
+        "on-click": "sudo decman"
     },
      "network": {
         "interval": 1,

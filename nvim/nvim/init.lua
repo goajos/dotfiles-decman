@@ -1,6 +1,7 @@
 -- basic keybinds
 vim.g.mapleader =" " -- space leader key
 local map = vim.api.nvim_set_keymap
+map('n','<Space>','<Nop>', {noremap=true}) -- don't move cursor when using leader
 map('n','<leader>cd',':Ex<CR>', {noremap=true})
 
 local o = vim.opt
@@ -17,8 +18,6 @@ o.smartindent = true -- enable correctly indenting after {
 o.cursorline = true -- enable cursor line highlight
 o.hlsearch = true -- enable highlighted search
 o.wrap = false -- disable line wrapping
-
--- optional options
 o.winborder = "rounded" -- set rounded border for hover popup
 
 -- basic packages
@@ -38,4 +37,9 @@ vim.lsp.enable({
     "ty",
 })
 o.signcolumn = 'yes' -- always who the sign colum
-vim.diagnostic.config({virtual_text = true})
+vim.diagnostic.config({virtual_text = true}) -- inline diagnostics text
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {"help", "man"},
+    command = "wincmd L",
+})
