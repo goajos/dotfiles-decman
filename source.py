@@ -82,3 +82,18 @@ decman.modules += [
 ]
 
 decman.enabled_systemd_units += ["NetworkManager.service"]
+
+class NoConfirmCommands(decman.config.Commands):
+    def install_pkgs(self, pkgs: list[str]) -> list[str]:
+        return ["pacman", "-S", "--color=always", "--needed", "--noconfirm"] + pkgs
+
+    def install_files(self, pkg_files: list[str]) -> list[str]:
+        return ["pacman", "-U", "--color=always", "--asdeps", "--noconfirm"] + pkg_files
+
+    def install_deps(self, deps: list[str]) -> list[str]:
+        return ["pacman", "-S", "--color=always", "--needed", "--asdeps", "--noconfirm"] + deps
+
+    def upgrade(self) -> list[str]:
+        return ["pacman", "-Syu", "--color=always", "--noconfirm"]
+
+decman.config.commands = NoConfirmCommands()
