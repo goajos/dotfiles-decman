@@ -2,7 +2,8 @@
 [{
     "layer": "top",
     "height": 25,
-    "modules-center": ["wireplumber","bluetooth", "clock", "custom/decman", "network", "privacy", "privacy#audioin"],
+    "modules-center": ["wireplumber","bluetooth", "clock", "network", "privacy", "privacy#audioin"],
+    "modules-right": ["custom/decman"],
     "wireplumber": {
         "format": "{icon}",
         "format-muted": "󰖁",

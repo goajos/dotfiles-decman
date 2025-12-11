@@ -18,17 +18,9 @@ class Nvim(Module):
     def aur_packages(self) -> list[str]:
         return [
             "neovim-nightly-bin",  # NeoVim nightly build
-            "ty",  # An extremely fast Python type checker and language server, written in Rust.
         ]
 
     def pacman_packages(self) -> list[str]:
         return [
-            "fd",  # Simple, fast and user-friendly alternative to find
-            "fzf",  # Command-line fuzzy finder
-            "lua-language-server",  # Lua Language Server coded by Lua
-            # "neovim",  # Fork of Vim aiming to improve user experience, plugins, and GUIs
-            "ripgrep",  # A search tool that combines the usability of ag with the raw speed of grep
-            "ruff",  # An extremely fast Python linter, written in Rust
-            "rust-analyzer",  # Rust compiler front-end for IDEs
-            "typescript-language-server",  # Language Server Protocol (LSP) implementation for TypeScript using tsserver
+            "ripgrep", # A search tool that combines the usability of ag with the raw speed of grep
         ]

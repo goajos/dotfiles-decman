@@ -10,3 +10,6 @@ normal = { family = "JetBrainsMono Nerd Font Mono" }
 bindings = [
     { key = "Enter", mods = "Super", action = "ToggleFullscreen" }
     ]
+
+[window]
+decorations_theme_variant = "Dark"

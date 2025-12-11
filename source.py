@@ -26,6 +26,8 @@ from waybar.source import Perf, Waybar
 # TODO: git module with agent + token setup?
 # TODO: how to properly set up the uv executables for user services?
 # TODO: remove the 'jappe' dependencies in some of the service and config files?
+# TODO: properly set up a global theme with this as guideline:
+# https://github.com/projekt0n/github-nvim-theme/blob/main/lua/github-theme/palette/github_dark_default.lua
 
 os.environ["GNUPGHOME"] = f"/home/{USER}/.gnupug/"
 decman.config.makepkg_user = f"{USER}"
@@ -95,5 +97,8 @@ class NoConfirmCommands(decman.config.Commands):
 
     def upgrade(self) -> list[str]:
         return ["pacman", "-Syu", "--color=always", "--noconfirm"]
+
+    def remove(self, pkgs: list[str]) -> list[str]:
+        return ["pacman", "-Rs", "--color=always", "--noconfirm"] + pkgs
 
 decman.config.commands = NoConfirmCommands()
