@@ -1,11 +1,11 @@
 sort=-time
 layer=overlay
 
-background-color=#24292eff
-text-color=#d1d5daff
-border-color=#3b4248ff
+background-color=#0d1117ff
+text-color=#e6edf3ff
+border-color=#58a6ffff
 border-size=2
-border-radius=15
+border-radius=12
 width=300
 height=110
 icons=0
@@ -16,13 +16,13 @@ font=monospace 14
 progress-color=#2188ffff
 
 [urgency=low]
-border-color=#3b4248ff
+border-color=#58a6ffff
 
 [urgency=normal]
 border-color=#2188ffff
 
 [urgency=high]
-border-color=#ea4a5aff
+border-color=#ffa198ff
 default-timeout=0
 
 [app-name=wp-vol]
