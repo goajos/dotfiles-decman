@@ -26,13 +26,11 @@ vim.opt.grepprg = "rg --vimgrep" -- use ripgrep if available
 -- visual options
 vim.opt.termguicolors = true -- enable 24-bit colors
 vim.opt.signcolumn = "yes" -- always show sign column
-vim.opt.colorcolumn = "100" -- show column at 88 chars
 vim.opt.showmatch = true -- highlight matching brackets
 vim.opt.completeopt = "menuone,noinsert,noselect" -- completion options
 vim.opt.pumheight = 10 -- max popup menu items
 vim.opt.pumblend = 10 -- popup menu transparency
-vim.opt.winblend = 10 -- floatign window transparency
-vim.opt.conceallevel = 0 -- show concealed text
+vim.opt.winblend = 10 -- floating window transparency
 
 -- split options
 vim.opt.splitbelow = true -- horizontal splits open below
@@ -66,3 +64,8 @@ vim.opt.undodir = undodir
 if vim.fn.isdirectory(undodir) == 0 then
     vim.fn.mkdir(undodir, "p")
 end
+
+-- transparancy options
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" }

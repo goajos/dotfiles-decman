@@ -12,4 +12,8 @@ bindings = [
     ]
 
 [window]
+opacity = 0.80
 decorations_theme_variant = "Dark"
+
+[colors]
+transparent_background_colors = true
