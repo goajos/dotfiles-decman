@@ -73,6 +73,11 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
 }
 
+// mako transparency
+layer-rule {
+    match namespace="^notifications$"
+    opacity 0.8
+}
 layer-rule {
     match namespace="swww-daemonniri-overview"
     place-within-backdrop true
