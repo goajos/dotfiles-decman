@@ -4,7 +4,6 @@ from decman import Directory, File, Module, sh
 from config import USER
 
 
-# TODO: clickable waybar module to run decman? => move this to a niri keybind?
 class Waybar(Module):
     def __init__(self):
         super().__init__(name="waybar", enabled=True, version="1")
