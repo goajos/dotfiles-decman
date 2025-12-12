@@ -9,8 +9,16 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
--- open files vertically
+-- open help and man files in a new tab
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {"help", "man"},
-    command = "wincmd L",
+    command = "wincmd T",
+})
+
+-- quto-resize splits when window is resized
+vim.api.nvim_create_autocmd("VimResized", {
+  group = augroup,
+  callback = function()
+    vim.cmd("tabdo wincmd =")
+  end,
 })

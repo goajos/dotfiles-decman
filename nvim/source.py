@@ -22,5 +22,6 @@ class Nvim(Module):
 
     def pacman_packages(self) -> list[str]:
         return [
+            "fzf", # Command-line fuzzy finder
             "ripgrep", # A search tool that combines the usability of ag with the raw speed of grep
         ]

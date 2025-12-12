@@ -7,12 +7,19 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result (centered)" }
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down (centered)" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })
 
--- netrw navigation
-vim.keymap.set('n','<leader>cd',':Ex<CR>', { desc = "Open the netrw directory listing" })
+-- files navigation
+vim.keymap.set("n","<leader>cd",":Ex<CR>", { desc = "Open the netrw directory listing" })
+vim.keymap.set("n", "<leader>ff", ":find ", { desc = "Find file" })
 
--- buffer navigation
+-- buffers
 vim.keymap.set("n", "<leader>bn", "<Cmd>bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bp", "<Cmd>bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<leader>bb", ":buffers<CR>", { desc = "Show all active buffers" })
+
+-- terminals
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Leave terminal mode"})
+vim.keymap.set("t", "<C-v><Esc>", "<Esc>", { desc = "Map <Esc> to terminal buffer" })
+vim.keymap.set("n", "<leader>t", ":tabedit | :terminal<CR>", { desc = "Open a terminal buffer in a new tab" })
 
 -- visual mode indenting lock
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
@@ -21,3 +28,7 @@ vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 -- splitting windows
 vim.keymap.set("n", "<leader>sv", "<Cmd>vsplit<CR>", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", "<Cmd>split<CR>", { desc = "Split window horizontally" })
+
+-- search
+vim.keymap.set("n", "<leader>/", ":noh<CR>", { desc = "Clear search highlighting" })
+
