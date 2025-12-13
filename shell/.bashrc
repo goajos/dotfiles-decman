@@ -21,10 +21,12 @@ function yay()
 {
   if [ $# -eq 0 ]; then
     # update system
-    paru -Syu
+    #paru -Syu
+    pikaur -Syu
   else
     # install aur package
-    paru -S -- "$@"
+    #paru -S -- "$@"
+    pikaur -S -- "$@"
   fi
 }
 
@@ -32,10 +34,12 @@ function yeet()
 {
   if [ $# -eq 0 ]; then
     # clean cache
-    paru -Scc
+    #paru -Scc
+    pikaur -Scc
   else
     # remove aur package
-    paru -Rns -- "$@"
+    #paru -Rns -- "$@"
+    pikaur -Rns -- "$@"
   fi
 }
 
