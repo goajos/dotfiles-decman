@@ -8,7 +8,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down (centered)" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })
 
 -- files navigation
-vim.keymap.set("n","<leader>cd",":Ex<CR>", { desc = "Open the netrw directory listing" })
+vim.keymap.set("n","<leader>cd",":Lexplore<CR>", { desc = "Open the netrw directory listing" })
 vim.keymap.set("n", "<leader>ff", ":find ", { desc = "Find file" })
 
 -- buffers

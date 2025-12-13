@@ -29,4 +29,6 @@ else
     require("configs.keymaps")
     require("configs.autocmds")
     require("plugins.github-nvim-theme")
+    require("plugins.treesitter")
+    require("plugins.nvim-lspconfig")
 end

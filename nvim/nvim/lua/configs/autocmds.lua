@@ -6,19 +6,19 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 		if mark[1] > 0 and mark[1] <= lcount then
 			pcall(vim.api.nvim_win_set_cursor, 0, mark)
 		end
-	end,
+	end
 })
 
 -- open help and man files in a new tab
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {"help", "man"},
-    command = "wincmd T",
+    command = "wincmd T"
 })
 
--- quto-resize splits when window is resized
+-- auto-resize splits when window is resized
 vim.api.nvim_create_autocmd("VimResized", {
   group = augroup,
   callback = function()
     vim.cmd("tabdo wincmd =")
-  end,
+  end
 })
