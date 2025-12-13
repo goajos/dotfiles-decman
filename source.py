@@ -24,13 +24,11 @@ from sound.source import Sound
 from waybar.source import Perf, Waybar
 
 # TODO: git module with agent + token setup?
-# TODO: how to properly set up the uv executables for user services?
-# TODO: remove the 'jappe' dependencies in some of the service and config files?
-# TODO: properly set up a global theme with this as guideline:
-# https://github.com/projekt0n/github-nvim-theme/blob/main/lua/github-theme/palette/github_dark_default.lua
+# TODO: remove the 'jappe' dependencies in some of the service and config files (paths)?
 
 os.environ["GNUPGHOME"] = f"/home/{USER}/.gnupug/"
 decman.config.makepkg_user = f"{USER}"
+decman.config.enable_flatpak = False
 
 # AUR packages (self-maintained with paru)
 decman.config.enable_fpm = False
