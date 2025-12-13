@@ -1,69 +1,13 @@
 {
-    // python settings
-    "python.analysis.typeCheckingMode": "standard",
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    "ruff.configuration": ".config/ruff/pyproject.toml",
-    "editor.codeActionsOnSave": {
-        "source.fixAll.ruff": "explicit",
-        "source.organizeImports.ruff": "explicit",
-    },
-
     // editor settings
-    "editor.lineNumbers": "relative",
     "workbench.colorTheme": "GitHub Dark Default",
-    "editor.fontFamily": "JetBrains Mono, monospace",
+    "editor.lineNumbers": "relative",
+    "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
     "editor.fontLigatures": true,
-
-    // copilot settings
-    "github.copilot.enable": {
-        "*": true
+   
+    // neovim settings
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
     },
-    "github.copilot.nextEditSuggestions.enabled": true,
-
-    // zen mod settings
-    "zenMode.centerLayout": false,
-    "zenMode.hideStatusBar": false,
-    "zenMode.hideLineNumbers": false,
-
-    // vim settings
-    "vim.enableNeovim": false,
-    "vim.hlsearch": true,
-    "vim.leader": "<Space>",
-    "vim.normalModeKeyBindingsNonRecursive": [
-        
-        {
-            "before": ["J"],
-            "after": ["5", "j"]
-        },
-        {
-            // join lines
-            "before": ["<Leader>", "j"],
-            "after": ["J"]
-        },
-        {
-            "before": ["K"],
-            "after": ["5", "k"]
-        },
-        {
-            "before": [],
-            "after": []
-        },
-        // commands
-        {
-            // clear highlighting
-            "before": ["<Leader>", "/"],
-            "commands": [":noh"]
-        },
-        {
-            "before": [],
-            "commands": []
-        },
-    ],
-    "vim.handleKeys": {
-        "<C-k>": false, // vscode zen mode toggle ctrl+k+z
-        "<C-b>": false, // vsocde sidebar toggle ctrl+b
-        "<C-j>": false, // vscode panel toggle ctrl+j
-        "<C-i>": false // vscode (inline) chat toggle ctrl+i
-    },
+    "vscode-neovim.neovimInitVimPaths.linux": "/home/jappe/.config/nvim/init.lua",
 }

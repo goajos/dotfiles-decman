@@ -19,10 +19,6 @@ class Misc(Module):
             f"/home/{USER}/.config/discord/settings.json": File(
                 source_file="misc/discord/settings.json"
             ),
-            # minimal ruff pyproject.toml
-            f"/home/{USER}/.config/ruff/pyproject.toml": File(
-                source_file="misc/code/pyproject.toml"
-            ),
         }
 
     def aur_packages(self) -> list[str]:

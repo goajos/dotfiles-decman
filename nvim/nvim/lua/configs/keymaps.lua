@@ -21,14 +21,6 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Leave terminal mode"})
 vim.keymap.set("t", "<C-v><Esc>", "<Esc>", { desc = "Map <Esc> to terminal buffer" })
 vim.keymap.set("n", "<leader>t", ":tabedit | :terminal<CR>", { desc = "Open a terminal buffer in a new tab" })
 
--- visual mode indenting lock
-vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
-vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
-
--- splitting windows
-vim.keymap.set("n", "<leader>sv", "<Cmd>vsplit<CR>", { desc = "Split window vertically" })
-vim.keymap.set("n", "<leader>sh", "<Cmd>split<CR>", { desc = "Split window horizontally" })
-
 -- search
 vim.keymap.set("n", "<leader>/", ":noh<CR>", { desc = "Clear search highlighting" })
 

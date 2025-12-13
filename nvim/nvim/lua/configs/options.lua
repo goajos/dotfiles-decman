@@ -2,10 +2,7 @@
 vim.opt.number = true -- line numbers
 vim.opt.relativenumber = true -- relative line numbers
 vim.opt.cursorline = true -- highlight current line
-vim.opt.scrolloff = 10 -- keep 10 lines above/below cursor
-vim.opt.sidescrolloff = 10 -- keep 10 columns left/right of cursor
 vim.opt.wrap = false -- don't wrap lines
-vim.opt.cmdheight = 1 -- command line height
 
 -- tab/indent options
 vim.opt.tabstop = 4 -- tab width
@@ -28,7 +25,6 @@ vim.opt.termguicolors = true -- enable 24-bit colors
 vim.opt.signcolumn = "yes" -- always show sign column
 vim.opt.showmatch = true -- highlight matching brackets
 vim.opt.completeopt = "menuone,noinsert,noselect" -- completion options
-vim.opt.pumheight = 10 -- max popup menu items
 vim.opt.pumblend = 10 -- popup menu transparency
 vim.opt.winblend = 10 -- floating window transparency
 
@@ -39,15 +35,10 @@ vim.opt.splitright = true -- vertical splits open to the right
 -- behavior options
 vim.opt.backspace = "indent,eol,start" -- normal backspace behavior
 vim.opt.iskeyword:append("-") -- dash is part of a word
-vim.opt.path:append("**") -- search in subfolders with `gf`
+vim.opt.path:append("**") -- build in fuzzy find
 vim.opt.mouse = "a" -- enable mouse in all modes
 vim.opt.wildmode = "longest,list" -- completion mode for cli
 vim.opt.wildignorecase = true -- case-insensitive tab completion
-
--- folding options
-vim.opt.foldmethod = "expr" -- use expressions for folding
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"  -- use treesitter for folding
-vim.opt.foldlevel = 99 -- keep all fold open by default
 
 -- file options
 vim.opt.backup = false -- no backup file
