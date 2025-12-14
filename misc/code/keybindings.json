@@ -1,5 +1,6 @@
 // Place your key bindings in this file to override the default
 [
+    // focus editor after search
     {
         "key": "enter",
         "command": "runCommands",
@@ -11,11 +12,13 @@
         },
         "when": "searchInputBoxFocus"
     },
+    // close sidebar with escape when explorer open
     {
         "key": "escape",
         "command": "workbench.action.toggleSidebarVisibility",
         "when": "foldersViewVisible"
     },
+    // close sidebar and clear search with escape when search open
     {
         "key": "escape",
         "command": "runCommands",
@@ -27,6 +30,7 @@
         },
         "when": "hasSearchResult && searchViewletVisible"
     },
+    // close sidebar with escape when search open with no results
     {
         "key": "escape",
         "command": "runCommands",
