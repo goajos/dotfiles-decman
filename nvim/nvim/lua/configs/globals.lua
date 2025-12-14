@@ -9,4 +9,4 @@ vim.g.netrw_banner=0 -- disable banner
 vim.g.netrw_liststyle=3 -- tree style listing
 
 -- python 
-vim.g.python3_host_prog="/home/jappe/.local/share/uv/python/cpython-3.14.0-linux-x86_64-gnu"
+vim.g.python3_host_prog="./.venv/bin/python"

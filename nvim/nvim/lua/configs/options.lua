@@ -25,8 +25,6 @@ vim.opt.termguicolors = true -- enable 24-bit colors
 vim.opt.signcolumn = "yes" -- always show sign column
 vim.opt.showmatch = true -- highlight matching brackets
 vim.opt.completeopt = "menuone,noinsert,noselect" -- completion options
-vim.opt.pumblend = 10 -- popup menu transparency
-vim.opt.winblend = 10 -- floating window transparency
 
 -- split options
 vim.opt.splitbelow = true -- horizontal splits open below
