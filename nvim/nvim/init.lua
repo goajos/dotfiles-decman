@@ -6,6 +6,8 @@ if vim.g.vscode then
     vim.g.maplocalleader =" " -- space local leader key
     vim.keymap.set('n','<Space>','<Nop>', { desc = "Don't move cursor when using leader key" })
 
+    vim.opt.clipboard = "unnamedplus" -- use system clipboard:
+
     -- center screen when jumping
     vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })
     vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
@@ -28,7 +30,7 @@ if vim.g.vscode then
         vscode.call("search.action.focusPreviousSearchResult")
         vscode.call("vscode-neovim.escape")
     end)
-    
+
     -- files navigation
     vim.keymap.set("n","<leader>cd", function()
         vscode.call("workbench.view.explorer")

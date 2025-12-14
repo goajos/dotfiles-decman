@@ -10,13 +10,13 @@
     "editor.occurrencesHighlight": "off",
     "editor.overviewRulerBorder": false,
     "editor.hideCursorInOverviewRuler": true,
-    
+    "breadcrumbs.enabled": false,
+
     // window settings
     "window.menuBarVisibility": "hidden",
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "never",
-    "breadcrumbs.enabled": true,
-    
+
     // workbench settings
     "workbench.colorTheme": "GitHub Dark Default",
     "workbench.activityBar.location": "hidden",
@@ -26,7 +26,7 @@
     "workbench.tree.enableStickyScroll": false,
     "workbench.tree.renderIndentGuides": "none",
     "workbench.tree.indent": 16,
-   
+
     // file explorer settings
     "explorer.compactFolders": false,
     "explorer.confirmDragAndDrop": false,
@@ -39,4 +39,9 @@
         "asvetliakov.vscode-neovim": 1
     },
     "vscode-neovim.neovimInitVimPaths.linux": "/home/jappe/.config/nvim/init.lua",
+
+    // files settings
+    "files.dialog.defaultPath": "/home/jappe/Repositories",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
 }
