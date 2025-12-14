@@ -1,15 +1,42 @@
 // Place your key bindings in this file to override the default
 [
-    // unfocus search input box on escape
+    {
+        "key": "enter",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.blur",
+                "workbench.action.focusActiveEditorGroup"
+            ]
+        },
+        "when": "searchInputBoxFocus"
+    },
+    {
+        "key": "escape",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "foldersViewVisible"
+    },
     {
         "key": "escape",
         "command": "runCommands",
         "args": {
             "commands": [
-                    "search.action.focusNextSearchResult",
-                    "cancelSelection",
-                ]
-            },
-        "when": "inSearchEditor && searchInputBoxFocus"
-    }
+                "search.action.clearSearchResults",
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+        "when": "hasSearchResult && searchViewletVisible"
+    },
+    {
+        "key": "escape",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.blur",
+                "workbench.action.toggleSidebarVisibility",
+                "workbench.action.focusActiveEditorGroup"
+            ]
+        },
+        "when": "!hasSearchResult && searchViewletVisible" 
+    },
 ]

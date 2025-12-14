@@ -246,7 +246,7 @@ binds {
 
     Mod+Shift+E hotkey-overlay-title="Quit niri session" { quit; }
     Mod+Shift+P hotkey-overlay-title="Power off monitors" { power-off-monitors; }
-    Mod+Shift+D hotkey-overlay-title="Update the system with Decman" { spawn-sh "sudo uv run decman && notify-send 'System updated'"; }
+    Mod+Shift+D hotkey-overlay-title="Update the system with Decman" { spawn-sh "sudo decman && notify-send 'System updated'"; }
 }
 
 recent-windows {
