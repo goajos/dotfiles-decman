@@ -4,7 +4,22 @@
     "editor.lineNumbers": "relative",
     "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
     "editor.fontLigatures": true,
+    
+    // main view settings
+    "editor.minimap.enabled": false,
+    "window.menuBarVisibility": "compact",
+    "workbench.activityBar.location": "hidden",
+    // "workbench.statusBar.visible": false,
+    "workbench.statusBar.visible": true,
+    "workbench.startupEditor": "none", 
+    "breadcrumbs.enabled": true,
    
+    // file explorer settings
+    "explorer.compactFolders": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "explorer.decorations.colors": false,
+
     // neovim settings
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1

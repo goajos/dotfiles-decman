@@ -1,4 +1,5 @@
 if vim.g.vscode then
+    local vscode = require("vscode")
     -- vscode neovim options
     -- leader key
     vim.g.mapleader =" " -- space leader key
@@ -19,10 +20,23 @@ if vim.g.vscode then
     vim.opt.smartcase = true -- case-sensitive if uppercase in search term
     vim.opt.hlsearch = true -- highlight search results
     vim.keymap.set("n", "<leader>/", ":noh<CR>", { desc = "Clear search highlighting" })
+    vim.keymap.set("n", "]q", function()
+        vscode.call("search.action.focusNextSearchResult")
+        vscode.call("vscode-neovim.escape")
+    end)
+    vim.keymap.set("n", "[q", function()
+        -- requires two function calls because we escape visual mode after text selection
+        -- otherwise neovim finds the current selection every function call
+        vscode.call("search.action.focusPreviousSearchResult")
+        vscode.call("search.action.focusPreviousSearchResult")
+        vscode.call("vscode-neovim.escape")
+    end)
     
     -- files navigation
     vim.keymap.set("n","<leader>cd",":Ex<CR>")
-    vim.keymap.set("n", "<leader>ff", ":find ")
+    vim.keymap.set("n", "<leader>ff", function()
+        vscode.call("search.action.openEditor")
+    end)
 else
     require("configs.options")
     require("configs.globals")
