@@ -34,11 +34,19 @@ if vim.g.vscode then
     -- files navigation
     vim.keymap.set("n","<leader>cd", function()
         vscode.call("workbench.view.explorer")
-        -- vscode.call("workbench.action.toggleSidebarVisibility")
     end)
     vim.keymap.set("n", "<leader>ff", function()
         vscode.call("workbench.action.findInFiles")
     end)
+
+    -- terminal
+    vim.keymap.set("n", "<leader>t", function()
+        vscode.call("workbench.action.terminal.toggleTerminal")
+    end)
+    vim.keymap.set("n", "<leader>tt", function()
+        vscode.call("workbench.action.terminal.new")
+    end)
+
 else
     require("configs.options")
     require("configs.globals")

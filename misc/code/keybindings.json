@@ -41,6 +41,11 @@
                 "workbench.action.focusActiveEditorGroup"
             ]
         },
-        "when": "!hasSearchResult && searchViewletVisible" 
+        "when": "!hasSearchResult && searchViewletVisible"
     },
+    {
+        "key": "escape",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminalFocus"
+    }
 ]

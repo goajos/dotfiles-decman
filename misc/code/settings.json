@@ -11,10 +11,13 @@
     "editor.overviewRulerBorder": false,
     "editor.hideCursorInOverviewRuler": true,
     "breadcrumbs.enabled": false,
+    "terminal.integrated.stickyScroll.enabled": false,
+    "terminal.integrated.suggest.enabled": false,
 
     // window settings
     "window.menuBarVisibility": "hidden",
     "window.titleBarStyle": "native",
+    "window.menuStyle": "custom",
     "window.customTitleBarVisibility": "never",
 
     // workbench settings
