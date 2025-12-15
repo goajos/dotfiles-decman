@@ -17,7 +17,7 @@
     {
         "key": "escape",
         "command": "workbench.action.toggleSidebarVisibility",
-        "when": "foldersViewVisible"
+        "when": "foldersViewVisible && neovim.mode != insert && neovim.mode != visual"
     },
     // close sidebar and clear search with escape when search open
     {
@@ -29,7 +29,7 @@
                 "workbench.action.toggleSidebarVisibility"
             ]
         },
-        "when": "hasSearchResult && searchViewletVisible"
+        "when": "hasSearchResult && searchViewletVisible && neovim.mode != insert && neovim.mode != visual"
     },
     // close sidebar with escape when search open with no results
     {
@@ -42,12 +42,12 @@
                 "workbench.action.focusActiveEditorGroup"
             ]
         },
-        "when": "!hasSearchResult && searchViewletVisible"
+        "when": "!hasSearchResult && searchViewletVisible && neovim.mode != insert && neovim.mode != visual"
     },
     {
         "key": "escape",
         "command": "workbench.action.terminal.toggleTerminal",
-        "when": "terminalFocus"
+        "when": "terminalFocus && neovim.mode != insert && neovim.mode != visual"
     },
     {
         "key": "ctrl+delete",

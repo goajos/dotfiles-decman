@@ -17,7 +17,7 @@
     "breadcrumbs.enabled": false,
     "terminal.integrated.stickyScroll.enabled": false,
     "terminal.integrated.suggest.enabled": false,
-
+    "terminal.integrated.cwd": "${workspaceFolder}",
     // window settings
     "window.menuBarVisibility": "hidden",
     "window.titleBarStyle": "native",
