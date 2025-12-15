@@ -1,0 +1,56 @@
+// Place your key bindings in this file to override the default
+// mklink "C:\Users\jcremers\AppData\Roaming\Code\User\keybindings.json" "\\wsl$\archlinux\home\jappe\Repositories\dotfiles\misc\code\wsl\keybindings.json"
+[
+    // focus editor after search
+    {
+        "key": "enter",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.blur",
+                "workbench.action.focusActiveEditorGroup"
+            ]
+        },
+        "when": "searchInputBoxFocus"
+    },
+    // close sidebar with escape when explorer open
+    {
+        "key": "escape",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "foldersViewVisible"
+    },
+    // close sidebar and clear search with escape when search open
+    {
+        "key": "escape",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "search.action.clearSearchResults",
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+        "when": "hasSearchResult && searchViewletVisible"
+    },
+    // close sidebar with escape when search open with no results
+    {
+        "key": "escape",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.blur",
+                "workbench.action.toggleSidebarVisibility",
+                "workbench.action.focusActiveEditorGroup"
+            ]
+        },
+        "when": "!hasSearchResult && searchViewletVisible"
+    },
+    {
+        "key": "escape",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+delete",
+        "command": "workbench.action.terminal.kill"
+    }
+]
