@@ -13,6 +13,5 @@ class Python(Module):
         ]
 
     def on_enable(self) -> None:
-        sh("uv tool install /home/jappe/Repositories/decman")
         sh("uv tool install --editable /home/jappe/Repositories/bt-auto-connect")
         sh("uv tool install --editable /home/jappe/Repositories/idle-inhibitor")

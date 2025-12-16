@@ -17,8 +17,8 @@
     "breadcrumbs.enabled": false,
     "terminal.integrated.stickyScroll.enabled": false,
     "terminal.integrated.suggest.enabled": false,
-    "terminal.integrated.cwd": "${workspaceFolder}",
-    // window settings
+
+     // window settings
     "window.menuBarVisibility": "hidden",
     "window.titleBarStyle": "native",
     "window.menuStyle": "custom",
@@ -45,6 +45,7 @@
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
+    // ln -s /home/jappe/Repositories/dotfiles/nvim/nvim/init.lua /home/jappe/.config/nvim/init.lua
     "vscode-neovim.neovimInitVimPaths.linux": "/home/jappe/.config/nvim/init.lua",
     "vscode-neovim.useWSL": true,
     "vscode-neovim.wslDistribution": "archlinux",

@@ -39,18 +39,27 @@
             "commands": [
                 "workbench.action.blur",
                 "workbench.action.toggleSidebarVisibility",
+
                 "workbench.action.focusActiveEditorGroup"
             ]
         },
         "when": "!hasSearchResult && searchViewletVisible && neovim.mode != insert && neovim.mode != visual"
     },
+    // focus editor from terminal
     {
-        "key": "escape",
-        "command": "workbench.action.terminal.toggleTerminal",
-        "when": "terminalFocus && neovim.mode != insert && neovim.mode != visual"
+        "key": "ctrl+w k",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus || inDebugRepl || activePanel == workbench.panel.output"
     },
+    // kill active terminal
     {
         "key": "ctrl+delete",
         "command": "workbench.action.terminal.kill"
+    },
+    // close panel when terminal/debug repl/output open
+    {
+        "key": "escape",
+        "command": "workbench.action.togglePanel",
+        "when": "terminalFocus || inDebugRepl || activePanel == workbench.panel.output"
     }
 ]
