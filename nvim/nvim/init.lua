@@ -66,6 +66,16 @@ if vim.g.vscode then
     vim.keymap.set("n", "<leader>to", function()
         vscode.call("workbench.action.output.toggleOutput")
     end)
+
+    -- code
+    vim.keymap.set("n", "<leader>cr", function()
+        vscode.call("editor.action.rename")
+    end)
+
+    -- file
+    vim.keymap.set("n", "<leader>w", function()
+        vscode.call("workbench.action.files.save")
+    end)
 else
     require("configs.options")
     require("configs.globals")

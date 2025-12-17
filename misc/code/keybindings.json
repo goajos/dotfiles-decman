@@ -7,16 +7,6 @@
         "when": "activePanel == terminal || activePanel == workbench.panel.repl || activePanel == workbench.panel.output"
     },
     {
-        "key": "shift + K",
-        "command": "runCommands",
-        "args": {
-            "commands": [
-                "editor.action.showHover",
-                "editor.action.showHover",
-            ]
-        }
-    },
-    {
         "key": "escape",
         "command": "runCommands",
         "args": {
@@ -25,20 +15,23 @@
                 "workbench.action.closeSidebar",
             ]
         },
-        "when": "neovim.mode != insert && neovim.mode != visual && !inQuickOpen && !(editorHoverVisible || suggestWidgetVisible || parameterHintsVisible)"
+        "when": "neovim.mode != insert && neovim.mode != visual && !(inQuickOpen || editorHoverVisible || suggestWidgetVisible || parameterHintsVisible || findWidgetVisible || referenceSearchVisible || renameInputVisible)"
     },
     {
         "key": "escape",
         "command": "runCommands",
         "args": {
             "commands": [
-                "hideSuggestWidget",
+                "workbench.action.closeQuickOpen",
                 "editor.action.hideHover",
+                "hideSuggestWidget",
                 "closeParameterHints",
-                "editor.action.closeQuickOpen"
+                "closeFindWidget",
+                "closeReferenceSearch",
+                "cancelRenameInput"
             ]
         },
-        "when": "neovim.mode != insert && neovim.mode != visual && inQuickOpen && (editorHoverVisible || suggestWidgetVisible || parameterHintsVisible)"
+        "when": "neovim.mode != insert && neovim.mode != visual && (inQuickOpen || editorHoverVisible || suggestWidgetVisible || parameterHintsVisible || findWidgetVisible || referenceSearchVisible || renameInputVisible)"
     },
     // focus editor after search to enable jumping with ]q and [q
     {
@@ -67,5 +60,5 @@
         "key": "alt+j",
         "command": "editor.action.moveLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
-    },
+    }
 ]
