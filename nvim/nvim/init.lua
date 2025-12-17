@@ -31,6 +31,11 @@ if vim.g.vscode then
         vscode.call("vscode-neovim.escape")
     end)
 
+    -- source control
+    vim.keymap.set("n", "<leader>scm", function()
+        vscode.call("workbench.view.scm")
+    end)
+
     -- files navigation
     vim.keymap.set("n", "<leader>cd", function()
         vscode.call("workbench.view.explorer")
@@ -61,52 +66,6 @@ if vim.g.vscode then
     vim.keymap.set("n", "<leader>to", function()
         vscode.call("workbench.action.output.toggleOutput")
     end)
-
-    -- code actions
-    -- vim.keymap.set("n", "<leader>gra", function()
-    --     vscode.call("editor.action.quickFix")
-    -- end)
-    -- vim.keymap.set("n", "<leader>gri", function()
-    --     vscode.call("editor.action.goToImplementation")
-    -- end)
-    -- vim.keymap.set("n", "<leader>grn", function()
-    --     vscode.call("editor.action.rename")
-    -- end)
-    -- vim.keymap.set("n", "<leader>grr", function()
-    --     vscode.call("editor.action.referenceSearch.trigger")
-    -- end)
-    -- vim.keymap.set("n", "<leader>grt", function()
-    --     vscode.call("editor.action.goToTypeDefinition")
-    -- end)
-    -- vim.keymap.set("n", "gd", function()
-    --     vscode.call("editor.action.revealDefinition")
-    -- end)
-    -- vim.keymap.set("n", "<leader>gD", function()
-    --     vscode.call("editor.action.revealDeclaration")
-    -- end)
-    -- vim.keymap.set("n", "<leader>gO", function()
-    --     vscode.call("workbench.action.gotoSymbol")
-    -- end)
-    -- invalid with vscode save and save as?
-    -- vim.keymap.set("i", "<C-S>", function()
-    --     vscode.call("editor.action.triggerParameterHints")
-    -- end)
-    vim.keymap.set("n", "<leader>F", function()
-        vscode.call("editor.action.formatDocument")
-    end)
-    -- handled natively in vscode
-    -- vim.keymap.set("n", "<leader>cs", function()
-    --     vscode.call("editor.action.triggerSuggest")
-    -- end)
-    -- vim.keymap.set("n", "<leader>csp", function()
-    --     vscode.call("editor.action.triggerParameterHints")
-    -- end)
-    vim.keymap.set("n", "K", function()
-        vscode.call("editor.action.showHover")
-    end)
-    -- TODO: quickfix?
-    -- TODO:
-
 else
     require("configs.options")
     require("configs.globals")

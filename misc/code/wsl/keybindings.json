@@ -1,7 +1,49 @@
 // Place your key bindings in this file to override the default
 // mklink "C:\Users\jcremers\AppData\Roaming\Code\User\keybindings.json" "\\wsl$\archlinux\home\jappe\Repositories\dotfiles\misc\code\wsl\keybindings.json"
 [
-    // focus editor after search
+    // focus editor from terminal
+    {
+        "key": "ctrl+w k",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "activePanel == terminal || activePanel == workbench.panel.repl || activePanel == workbench.panel.output"
+    },
+    {
+        "key": "shift + K",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "editor.action.showHover",
+                "editor.action.showHover",
+            ]
+        }
+    },
+    {
+        "key": "escape",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.closePanel",
+                "workbench.action.closeSidebar",
+            ]
+        },
+        // "when": "neovim.mode != insert && neovim.mode != visual && !inQuickOpen && !(editorHoverVisible || suggestWidgetVisible || parameterHintsVisible)"
+        "when": "!inQuickOpen && !(editorHoverVisible || suggestWidgetVisible || parameterHintsVisible)"
+    },
+    {
+        "key": "escape",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "hideSuggestWidget",
+                "editor.action.hideHover",
+                "closeParameterHints",
+                "editor.action.closeQuickOpen"
+            ]
+        },
+        // "when": "neovim.mode != insert && neovim.mode != visual && inQuickOpen && (editorHoverVisible || suggestWidgetVisible || parameterHintsVisible)"
+        "when": "inQuickOpen && (editorHoverVisible || suggestWidgetVisible || parameterHintsVisible)"
+    },
+    // focus editor after search to enable jumping with ]q and [q
     {
         "key": "enter",
         "command": "runCommands",
@@ -13,52 +55,20 @@
         },
         "when": "searchInputBoxFocus"
     },
-    // close sidebar with escape when explorer open
-    {
-        "key": "escape",
-        "command": "workbench.action.toggleSidebarVisibility",
-        "when": "foldersViewVisible && neovim.mode != insert && neovim.mode != visual"
-    },
-    // close sidebar and clear search with escape when search open
-    {
-        "key": "escape",
-        "command": "runCommands",
-        "args": {
-            "commands": [
-                "search.action.clearSearchResults",
-                "workbench.action.toggleSidebarVisibility"
-            ]
-        },
-        "when": "hasSearchResult && searchViewletVisible && neovim.mode != insert && neovim.mode != visual"
-    },
-    // close sidebar with escape when search open with no results
-    {
-        "key": "escape",
-        "command": "runCommands",
-        "args": {
-            "commands": [
-                "workbench.action.blur",
-                "workbench.action.toggleSidebarVisibility",
-                "workbench.action.focusActiveEditorGroup"
-            ]
-        },
-        "when": "!hasSearchResult && searchViewletVisible && neovim.mode != insert && neovim.mode != visual"
-    },
-    // focus editor from terminal
-    {
-        "key": "ctrl+w k",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "terminalFocus || inDebugRepl || activePanel == workbench.panel.output"
-    },
     // kill active terminal
     {
         "key": "ctrl+delete",
         "command": "workbench.action.terminal.kill"
     },
-    // close panel when terminal/debug repl/output open
+    // TODO: call these from neovim with :move?
     {
-        "key": "escape",
-        "command": "workbench.action.togglePanel",
-        "when": "terminalFocus || inDebugRepl || activePanel == workbench.panel.output"
-    }
+        "key": "alt+k",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+j",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
 ]
