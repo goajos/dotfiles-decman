@@ -37,6 +37,7 @@ decman.aur_packages += [
     "paru",  # Feature packed AUR helper
     # "ty",  # An extremely fast Python type checker and language server, written in Rust.
     # "visual-studio-code-bin",  # Visual Studio Code (vscode) official binary version
+    "yay"  # Yet another yogurt. Pacman wrapper and AUR helper written in go. (paru backup)
 ]
 
 base_system_packages = [
