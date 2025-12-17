@@ -39,7 +39,6 @@
             "commands": [
                 "workbench.action.blur",
                 "workbench.action.toggleSidebarVisibility",
-
                 "workbench.action.focusActiveEditorGroup"
             ]
         },

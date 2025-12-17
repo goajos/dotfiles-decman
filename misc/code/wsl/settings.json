@@ -2,7 +2,6 @@
 {
     // windows transparency settings
     "glassit.alpha": 225,
-
     // editor settings
     "editor.lineNumbers": "relative",
     "editor.fontLigatures": true,
@@ -17,13 +16,11 @@
     "breadcrumbs.enabled": false,
     "terminal.integrated.stickyScroll.enabled": false,
     "terminal.integrated.suggest.enabled": false,
-
-     // window settings
+    // window settings
     "window.menuBarVisibility": "hidden",
     "window.titleBarStyle": "native",
     "window.menuStyle": "custom",
     "window.customTitleBarVisibility": "never",
-
     // workbench settings
     "workbench.colorTheme": "GitHub Dark Default",
     "workbench.activityBar.location": "hidden",
@@ -33,14 +30,12 @@
     "workbench.tree.enableStickyScroll": false,
     "workbench.tree.renderIndentGuides": "none",
     "workbench.tree.indent": 16,
-
     // file explorer settings
     "explorer.compactFolders": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
     "explorer.decorations.colors": false,
     "git.decorations.enabled": false,
-
     // neovim settings
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
@@ -49,8 +44,12 @@
     "vscode-neovim.neovimInitVimPaths.linux": "/home/jappe/.config/nvim/init.lua",
     "vscode-neovim.useWSL": true,
     "vscode-neovim.wslDistribution": "archlinux",
-
     // files settings
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
+    // copilot settings
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "github.copilot.enable": {
+        "*": false
+    },
 }

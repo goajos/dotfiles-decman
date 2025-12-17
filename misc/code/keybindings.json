@@ -16,7 +16,7 @@
     {
         "key": "escape",
         "command": "workbench.action.toggleSidebarVisibility",
-        "when": "foldersViewVisible"
+        "when": "foldersViewVisible && neovim.mode != insert && neovim.mode != visual"
     },
     // close sidebar and clear search with escape when search open
     {
@@ -28,7 +28,7 @@
                 "workbench.action.toggleSidebarVisibility"
             ]
         },
-        "when": "hasSearchResult && searchViewletVisible"
+        "when": "hasSearchResult && searchViewletVisible && neovim.mode != insert && neovim.mode != visual"
     },
     // close sidebar with escape when search open with no results
     {
@@ -41,11 +41,40 @@
                 "workbench.action.focusActiveEditorGroup"
             ]
         },
-        "when": "!hasSearchResult && searchViewletVisible"
+        "when": "!hasSearchResult && searchViewletVisible && neovim.mode != insert && neovim.mode != visual"
     },
+    // focus editor from terminal
+    {
+        "key": "ctrl+w k",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus || inDebugRepl || activePanel == workbench.panel.output"
+    },
+    // kill active terminal
+    {
+        "key": "ctrl+delete",
+        "command": "terminalFocus && workbench.action.terminal.kill"
+    },
+    // close panel when terminal/debug repl/output open
     {
         "key": "escape",
-        "command": "workbench.action.terminal.toggleTerminal",
-        "when": "terminalFocus"
-    }
+        "command": "workbench.action.togglePanel",
+        "when": "terminalFocus || inDebugRepl || activePanel == workbench.panel.output"
+    },
+    // close suggest widget
+    {
+        "key": "escape",
+        "command": "hideSuggestWidget",
+        "when": "editorFocus && suggestWidgetVisible"
+    },
+    // TODO: call these from neovim with :move?
+    {
+        "key": "alt+k",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+j",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
 ]
