@@ -5,6 +5,7 @@ if vim.g.vscode then
     vim.g.mapleader = " "      -- space leader key
     vim.g.maplocalleader = " " -- space local leader key
     vim.keymap.set('n', '<Space>', '<Nop>', { desc = "Don't move cursor when using leader key" })
+    vim.opt.timeoutlen =  2000 -- time in msecs to wait for a mapped sequence
 
     vim.opt.clipboard = "unnamedplus" -- use system clipboard:
 
@@ -58,13 +59,16 @@ if vim.g.vscode then
     vim.keymap.set("n", "<leader>tt", function()
         vscode.call("workbench.action.terminal.new")
     end)
+    -- output
+    vim.keymap.set("n", "<leader>to", function()
+        vscode.call("workbench.action.output.toggleOutput")
+    end)
     -- debug
     vim.keymap.set("n", "<leader>tr", function()
         vscode.call("workbench.debug.action.toggleRepl")
     end)
-    -- output
-    vim.keymap.set("n", "<leader>to", function()
-        vscode.call("workbench.action.output.toggleOutput")
+    vim.keymap.set("n", "<leader>dd", function()
+        vscode.call("workbench.view.debug")
     end)
 
     -- code
