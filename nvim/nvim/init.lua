@@ -9,6 +9,12 @@ if vim.g.vscode then
 
     vim.opt.clipboard = "unnamedplus" -- use system clipboard:
 
+    -- auto leave insert mode when changing buffers or window losing focus
+    vim.api.nvim_create_autocmd({"BufLeave", "FocusLost"}, {
+        pattern = "*",
+        command = "stopinsert"
+    })
+
     -- center screen when jumping
     vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })
     vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
@@ -24,61 +30,61 @@ if vim.g.vscode then
     vim.opt.hlsearch = true   -- highlight search results
     vim.keymap.set("n", "<leader>/", ":noh<CR>", { desc = "Clear search highlighting" })
     vim.keymap.set({ "n", "v" }, "]q", function()
-        vscode.call("search.action.focusNextSearchResult")
-        vscode.call("vscode-neovim.escape")
+        vscode.action("search.action.focusNextSearchResult")
+        vscode.action("vscode-neovim.escape")
     end)
     vim.keymap.set({ "n", "v" }, "[q", function()
-        vscode.call("search.action.focusPreviousSearchResult")
-        vscode.call("vscode-neovim.escape")
+        vscode.action("search.action.focusPreviousSearchResult")
+        vscode.action("vscode-neovim.escape")
     end)
 
     -- source control
     vim.keymap.set("n", "<leader>scm", function()
-        vscode.call("workbench.view.scm")
+        vscode.action("workbench.view.scm")
     end)
 
     -- files navigation
     vim.keymap.set("n", "<leader>cd", function()
-        vscode.call("workbench.view.explorer")
+        vscode.action("workbench.files.action.showActiveFileInExplorer")
     end)
     vim.keymap.set("n", "<leader>ff", function()
-        vscode.call("workbench.action.findInFiles")
+        vscode.action("workbench.action.findInFiles")
     end)
     -- buffers (=views)
     vim.keymap.set("n", "<leader>bd", function()
-        vscode.call("workbench.action.closeActiveEditor")
+        vscode.action("workbench.action.closeActiveEditor")
     end)
     vim.keymap.set("n", "<leader>bb", function()
-        vscode.call("workbench.action.quickOpen")
+        vscode.action("workbench.action.quickOpen")
     end)
 
     -- terminal
     vim.keymap.set("n", "<leader>t", function()
-        vscode.call("workbench.action.terminal.toggleTerminal")
+        vscode.action("workbench.action.terminal.toggleTerminal")
     end)
     vim.keymap.set("n", "<leader>tt", function()
-        vscode.call("workbench.action.terminal.new")
+        vscode.action("workbench.action.terminal.new")
     end)
     -- output
     vim.keymap.set("n", "<leader>to", function()
-        vscode.call("workbench.action.output.toggleOutput")
+        vscode.action("workbench.action.output.toggleOutput")
     end)
     -- debug
     vim.keymap.set("n", "<leader>tr", function()
-        vscode.call("workbench.debug.action.toggleRepl")
+        vscode.action("workbench.debug.action.toggleRepl")
     end)
     vim.keymap.set("n", "<leader>dd", function()
-        vscode.call("workbench.view.debug")
+        vscode.action("workbench.view.debug")
     end)
 
     -- code
     vim.keymap.set("n", "<leader>cr", function()
-        vscode.call("editor.action.rename")
+        vscode.action("editor.action.rename")
     end)
 
     -- file
     vim.keymap.set("n", "<leader>w", function()
-        vscode.call("workbench.action.files.save")
+        vscode.action("workbench.action.files.save")
     end)
 else
     require("configs.options")

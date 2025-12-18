@@ -12,7 +12,7 @@
     "editor.scrollbar.vertical": "hidden",
     "editor.occurrencesHighlight": "off",
     "editor.overviewRulerBorder": false,
-    "editor.hideCursorInOverviewRuler": true,
+    "editor.cursorBlinking": "solid",
     "editor.rulers": [100],
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 100,
@@ -56,4 +56,5 @@
     "github.copilot.enable": {
         "*": false
     },
+    // "ruff.configuration": "${workspaceFolder}/pyproject.toml",
 }
