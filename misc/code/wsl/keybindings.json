@@ -1,11 +1,17 @@
 // Place your key bindings in this file to override the default
 // mklink "C:\Users\jcremers\AppData\Roaming\Code\User\keybindings.json" "\\wsl$\archlinux\home\jappe\Repositories\dotfiles\misc\code\wsl\keybindings.json"
 [
-    // focus editor from terminal
+    // focus editor from panel
     {
         "key": "ctrl+w k",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "activePanel == terminal || activePanel == workbench.panel.repl || activePanel == workbench.panel.output"
+    },
+    // focus editor from sidebar
+    {
+       "key": "ctrl+w l",
+       "command": "workbench.action.focusActiveEditorGroup",
+       "when": "activeViewlet == workbench.view.explorer || activeViewlet == workbench.view.search || activeViewlet == workbench.view.scm || activeViewlet == workbench.view.debug"
     },
     {
         "key": "escape",
