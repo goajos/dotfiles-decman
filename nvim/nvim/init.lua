@@ -87,6 +87,7 @@ if vim.g.vscode then
         vscode.action("workbench.action.files.save")
     end)
 else
+    -- this native nvim setup is currently deprecated and not maintained
     require("configs.options")
     require("configs.globals")
     require("configs.keymaps")

@@ -31,8 +31,6 @@ class Waybar(Module):
     def pacman_packages(self) -> list[str]:
         return [
             "bc",  # An arbitrary precision calculator language
-            "intel-gpu-tools",  # Tools for development and testing of the Intel DRM driver
-            "turbostat",  # Report processor frequency and idle statistics
             "waybar",  # Highly customizable Wayland bar for Sway and Wlroots based compositors
         ]
 
@@ -46,7 +44,7 @@ class Waybar(Module):
 
 class Perf(Module):
     def __init__(self):
-        super().__init__(name="perf", enabled=False, version="1")
+        super().__init__(name="perf", enabled=True, version="1")
 
     def files(self) -> dict[str, File]:
         return {
@@ -55,9 +53,15 @@ class Perf(Module):
             ),
         }
 
-    def on_enable(self) -> None:
-        sh("groupadd -r msr")
+    def pacman_packages(self) -> list[str]:
+        return [
+            "intel-gpu-tools",  # Tools for development and testing of the Intel DRM driver
+            "turbostat",  # Report processor frequency and idle statistics
+        ]
+
+    def after_update(self) -> None:
+        sh("getent group msr || groupadd -r msr")
         sh(f"usermod -a -G msr {USER}")
-        sh("setcap cap_perfmon=+ep /usr/bin/intel_gpu_top")
-        sh("setcap cap_sys_admin,cap_sys_rawio,cap_sys_nice=+ep /usr/bin/turbostat")
+        sh("if [ -f /usr/bin/intel_gpu_top ]; then setcap cap_perfmon=+ep /usr/bin/intel_gpu_top; fi")
+        sh("if [ -f /usr/bin/turobstat ]; then setcap cap_sys_admin,cap_sys_rawio,cap_sys_nice=+ep /usr/bin/turbostat; fi")
         sh("udevadm control -R")

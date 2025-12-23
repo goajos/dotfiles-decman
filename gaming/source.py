@@ -30,5 +30,6 @@ class Gaming(Module):
         return [
             "lib32-vulkan-intel",  # Open-source Vulkan driver for Intel GPUs - 32-bit
             "umu-launcher",  # The Unified Launcher for Windows Games on Linux, to run Proton with fixes outside of Steam
+            "steam", # Valve's digital software delivery system
             "vulkan-intel",  # Open-source Vulkan driver for Intel GPUs
         ]

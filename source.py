@@ -10,6 +10,8 @@ from config import USER
 from devel.docker.source import Docker
 from devel.javascript.source import JavaScript
 from devel.python.source import Python
+from devel.rust.source import Rust
+from devel.zig.source import Zig
 from fonts.source import Fonts
 from fuzzel.source import Fuzzel
 from gaming.source import Gaming
@@ -77,9 +79,11 @@ decman.modules += [
     Pacman(),
     Perf(),
     Python(),
+    Rust(),
     Shell(),
     Sound(),
     Waybar(),
+    Zig(),
 ]
 
 decman.enabled_systemd_units += ["NetworkManager.service"]
