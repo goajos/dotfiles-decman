@@ -15,12 +15,6 @@ if vim.g.vscode then
         command = "stopinsert"
     })
 
-    -- center screen when jumping
-    vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })
-    vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
-    vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down (centered)" })
-    vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })
-
     vim.opt.path:append("**")        -- build in fuzzy find
     vim.opt.grepprg = "rg --vimgrep" -- use ripgrep if available
 
@@ -57,6 +51,25 @@ if vim.g.vscode then
     vim.keymap.set("n", "<leader>bb", function()
         vscode.action("workbench.action.quickOpen")
     end)
+    -- buffer navigation
+    vim.keymap.set("n", "<C-h>", function()
+        vscode.action("workbench.action.navigateLeft")
+    end)
+    vim.keymap.set("n", "<C-j>", function()
+        vscode.action("workbench.action.navigateDown")
+    end)
+    vim.keymap.set("n", "<C-k>", function()
+        vscode.action("workbench.action.navigateUp")
+    end)
+    vim.keymap.set("n", "<C-l>", function()
+        vscode.action("workbench.action.navigateRight")
+    end)
+    vim.keymap.set("n", "<Tab>", function()
+        vscode.action("workbench.action.nextEditorInGroup")
+    end)
+    vim.keymap.set("n", "<S-Tab>", function()
+        vscode.action("workbench.action.previousEditorInGroup")
+    end)
 
     -- terminal
     vim.keymap.set("n", "<leader>t", function()
@@ -78,7 +91,7 @@ if vim.g.vscode then
     end)
 
     -- code
-    vim.keymap.set("n", "<leader>cr", function()
+    vim.keymap.set({"n", "v"}, "<leader>cr", function()
         vscode.action("editor.action.rename")
     end)
 

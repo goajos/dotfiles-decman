@@ -4,10 +4,12 @@
     "glassit.alpha": 225,
     // editor settings
     "editor.lineNumbers": "relative",
+    "editor.fontFamily": "JetBrains Mono Nerd Font",
     "editor.fontLigatures": true,
     "editor.minimap.enabled": false,
     "editor.stickyScroll.enabled": false,
     "editor.matchBrackets": "never",
+    "editor.autoClosingBrackets": "never",
     "editor.tabCompletion": "on",
     "editor.scrollbar.vertical": "hidden",
     "editor.occurrencesHighlight": "off",
@@ -17,6 +19,7 @@
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 100,
     "editor.wrapOnEscapedLineFeeds": true,
+    "editor.cursorSurroundingLines": 10,
     "breadcrumbs.enabled": false,
     "terminal.integrated.stickyScroll.enabled": false,
     "terminal.integrated.suggest.enabled": false,
@@ -34,6 +37,9 @@
     "workbench.tree.enableStickyScroll": false,
     "workbench.tree.renderIndentGuides": "none",
     "workbench.tree.indent": 16,
+    "workbench.view.showQuietly": {
+        "workbench.panel.output": true
+    },
     // file explorer settings
     "explorer.compactFolders": false,
     "explorer.confirmDragAndDrop": false,
@@ -57,4 +63,5 @@
         "*": false
     },
     // "ruff.configuration": "${workspaceFolder}/pyproject.toml",
+    // "debugpy.debugJustMyCode": false,
 }
