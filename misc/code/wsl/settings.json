@@ -19,6 +19,7 @@
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 100,
     "editor.wrapOnEscapedLineFeeds": true,
+    "editor.cursorSurroundingLines": 10,
     "breadcrumbs.enabled": false,
     "terminal.integrated.stickyScroll.enabled": false,
     "terminal.integrated.suggest.enabled": false,

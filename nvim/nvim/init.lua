@@ -15,12 +15,6 @@ if vim.g.vscode then
         command = "stopinsert"
     })
 
-    -- center screen when jumping
-    vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })
-    vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
-    vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down (centered)" })
-    vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })
-
     vim.opt.path:append("**")        -- build in fuzzy find
     vim.opt.grepprg = "rg --vimgrep" -- use ripgrep if available
 
@@ -97,7 +91,7 @@ if vim.g.vscode then
     end)
 
     -- code
-    vim.keymap.set("n", "<leader>cr", function()
+    vim.keymap.set({"n", "v"}, "<leader>cr", function()
         vscode.action("editor.action.rename")
     end)
 
