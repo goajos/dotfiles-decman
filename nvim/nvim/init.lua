@@ -4,7 +4,7 @@ if vim.g.vscode then
     -- leader key
     vim.g.mapleader = " "      -- space leader key
     vim.g.maplocalleader = " " -- space local leader key
-    vim.keymap.set('n', '<Space>', '<Nop>', { desc = "Don't move cursor when using leader key" })
+    vim.keymap.set("n", "<Space>", "<Nop>", { desc = "Don't move cursor when using leader key" })
     vim.opt.timeoutlen =  2000 -- time in msecs to wait for a mapped sequence
 
     vim.opt.clipboard = "unnamedplus" -- use system clipboard:
@@ -101,10 +101,23 @@ if vim.g.vscode then
     end)
 else
     -- this native nvim setup is currently deprecated and not maintained
-    require("configs.options")
-    require("configs.globals")
-    require("configs.keymaps")
-    require("configs.autocmds")
-    -- require("plugins.treesitter")
-    -- require("plugins.nvim-lspconfig")
+    vim.g.mapleader = " "      -- space leader key
+    vim.g.maplocalleader = " " -- space local leader key
+    vim.keymap.set("n", "<Space>", "<Nop>", { desc = "Don't move cursor when using leader key" })
+    vim.opt.clipboard = "unnamedplus" -- use system clipboard:
+    vim.opt.number = true
+    vim.opt.relativenumber = true
+    vim.opt.cursorline = true
+    vim.opt.signcolumn = "yes"
+    vim.opt.autocomplete = true
+    vim.opt.completeopt = "fuzzy,menu,menuone,popup"
+    vim.opt.complete = "o"
+
+    vim.pack.add({
+      "https://github.com/projekt0n/github-nvim-theme"
+    })
+    vim.cmd[[colorscheme github_dark_default]]
+
+    vim.pack.add { 'https://github.com/neovim/nvim-lspconfig' }
+    vim.lsp.enable('ty')
 end
