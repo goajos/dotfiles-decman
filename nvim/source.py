@@ -23,7 +23,9 @@ class Nvim(Module):
 
     def pacman_packages(self) -> list[str]:
         return [
+            "lua-language-server",  # Lua Language Server coded by Lua
             "ripgrep", # A search tool that combines the usability of ag with the raw speed of grep
+            "tree-sitter-cli", # CLI tool for developing, testing, and using Tree-sitter parsers
         ]
 
     def on_enable(self) -> None:

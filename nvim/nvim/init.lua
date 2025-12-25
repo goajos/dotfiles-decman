@@ -1,3 +1,4 @@
+-- TODO: how to set this up with separate modules?
 if vim.g.vscode then
     local vscode = require("vscode")
     -- vscode neovim options
@@ -101,6 +102,7 @@ if vim.g.vscode then
         vscode.action("workbench.action.files.save")
     end)
 else
+    -- TODO: set up undo dir?
     vim.g.mapleader = " "      -- space leader key
     vim.g.maplocalleader = " " -- space local leader key
     vim.keymap.set("n", "<Space>", "<Nop>", { desc = "Don't move cursor when using leader key" })
@@ -124,6 +126,18 @@ else
     vim.opt.wrap = true -- enable word wrap
     vim.opt.breakindent = true -- wrap lines continue visually
     vim.opt.scrolloff = 10 -- keep 10 lines above/below cursor
+    vim.opt.cmdheight = 0 -- linesize of the cmdline
+    vim.opt.splitright = true -- split windows right by default
+
+    vim.pack.add { "https://github.com/nvim-treesitter/nvim-treesitter" }
+    require'nvim-treesitter'.install({"python"})
+
+    vim.opt.foldmethod = "expr"
+    vim.opt.foldexpr =  "v:lua.vim.treesitter.foldexpr()"
+    -- vim.opt.foldexpr = "v:lua.vim.lsp.foldexpr()"
+    vim.opt.foldlevel = 99
+    -- vim.opt.foldcolumn = "auto"
+    vim.opt.fillchars = [[fold: ,foldopen:▼,foldclose:▶,foldsep: ,foldinner: ]]
 
     -- auto leave insert mode when changing windows or nvim losing focus
     vim.api.nvim_create_autocmd({"WinLeave", "FocusLost"}, {
@@ -134,6 +148,7 @@ else
     vim.api.nvim_create_autocmd({"WinEnter", "BufEnter"}, {
         callback = function()
             vim.opt.signcolumn = "number"
+            vim.opt.foldcolumn = "auto"
             vim.opt.number = true
             vim.opt.relativenumber = true
         end
@@ -141,13 +156,14 @@ else
     vim.api.nvim_create_autocmd({"WinLeave", "BufLeave"}, {
         callback = function()
             vim.opt.signcolumn = "no"
+            vim.opt.foldcolumn = "0"
             vim.opt.number = false
             vim.opt.relativenumber = false
         end
     })
 
     vim.g.netrw_keepdir = 0 -- keep current dir and browse dir synced
-    vim.g.netrw_banner = 0 -- disable banner
+    -- vim.g.netrw_banner = 0 -- disable banner
     vim.g.netrw_liststyle = 3 -- tree style listing
 
     vim.pack.add({
@@ -155,6 +171,8 @@ else
     })
     vim.cmd[[colorscheme github_dark_default]]
 
-    vim.pack.add { 'https://github.com/neovim/nvim-lspconfig' }
-    vim.lsp.enable('ty')
+    vim.pack.add { "https://github.com/neovim/nvim-lspconfig" }
+    vim.lsp.enable("ty")
+    vim.lsp.enable("lua_ls")
+    vim.lsp.inlay_hint.enable(true)
 end
