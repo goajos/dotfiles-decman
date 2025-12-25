@@ -8,6 +8,7 @@ if vim.g.vscode then
     vim.opt.timeoutlen =  2000 -- time in msecs to wait for a mapped sequence
 
     vim.opt.clipboard = "unnamedplus" -- use system clipboard:
+    vim.keymap.set("v", "<leader>p", '"_dP') -- paste without overwriting the register
 
     -- auto leave insert mode when changing buffers or window losing focus
     vim.api.nvim_create_autocmd({"BufLeave", "FocusLost"}, {
@@ -100,18 +101,54 @@ if vim.g.vscode then
         vscode.action("workbench.action.files.save")
     end)
 else
-    -- this native nvim setup is currently deprecated and not maintained
     vim.g.mapleader = " "      -- space leader key
     vim.g.maplocalleader = " " -- space local leader key
     vim.keymap.set("n", "<Space>", "<Nop>", { desc = "Don't move cursor when using leader key" })
     vim.opt.clipboard = "unnamedplus" -- use system clipboard:
-    vim.opt.number = true
-    vim.opt.relativenumber = true
-    vim.opt.cursorline = true
-    vim.opt.signcolumn = "yes"
-    vim.opt.autocomplete = true
-    vim.opt.completeopt = "fuzzy,menu,menuone,popup"
-    vim.opt.complete = "o"
+    vim.keymap.set("v", "<leader>p", '"_dp') -- paste without overwriting the register
+    vim.opt.ignorecase = true -- case-insensitive search
+    vim.opt.smartcase = true  -- case-sensitive if uppercase in search term
+    vim.opt.hlsearch = true   -- highlight search results
+    -- vim.opt.number = true -- show line numbers
+    -- vim.opt.relativenumber = true -- show relative line numbers
+    vim.opt.termguicolors = true -- enable true colors
+    vim.opt.swapfile = false -- disable swapfiles
+    vim.opt.autoindent = true -- enable auto indentation
+    vim.opt.shiftwidth = 4 -- tab size for indentation
+    vim.opt.expandtab = true -- use spaces for tabs
+    vim.opt.tabstop = 4 -- tab size
+    vim.opt.softtabstop = 4 -- tab size insert mode
+    vim.opt.cursorline = true -- highlight cursor line
+    -- vim.opt.signcolumn = "number" -- show sign column in the number column
+    vim.opt.colorcolumn = "100" -- show column line at 100 chars
+    vim.opt.wrap = true -- enable word wrap
+    vim.opt.breakindent = true -- wrap lines continue visually
+    vim.opt.scrolloff = 10 -- keep 10 lines above/below cursor
+
+    -- auto leave insert mode when changing windows or nvim losing focus
+    vim.api.nvim_create_autocmd({"WinLeave", "FocusLost"}, {
+        command = "stopinsert"
+    })
+
+    -- show sign/number only in active window
+    vim.api.nvim_create_autocmd({"WinEnter", "BufEnter"}, {
+        callback = function()
+            vim.opt.signcolumn = "number"
+            vim.opt.number = true
+            vim.opt.relativenumber = true
+        end
+    })
+    vim.api.nvim_create_autocmd({"WinLeave", "BufLeave"}, {
+        callback = function()
+            vim.opt.signcolumn = "no"
+            vim.opt.number = false
+            vim.opt.relativenumber = false
+        end
+    })
+
+    vim.g.netrw_keepdir = 0 -- keep current dir and browse dir synced
+    vim.g.netrw_banner = 0 -- disable banner
+    vim.g.netrw_liststyle = 3 -- tree style listing
 
     vim.pack.add({
       "https://github.com/projekt0n/github-nvim-theme"

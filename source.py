@@ -36,6 +36,7 @@ decman.config.enable_flatpak = False
 decman.config.enable_fpm = False
 decman.aur_packages += [
     "decman",  # Declarative package & configuration manager for Arch Linux.
+    # "neovim-nightly-bin",  # NeoVim nightly build
     "paru",  # Feature packed AUR helper
     # "ty",  # An extremely fast Python type checker and language server, written in Rust.
     # "visual-studio-code-bin",  # Visual Studio Code (vscode) official binary version

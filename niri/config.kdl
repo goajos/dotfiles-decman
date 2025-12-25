@@ -91,6 +91,13 @@ window-rule {
     opacity 0.9
 }
 
+// firefox transparency
+window-rule {
+    match title=r#"Mozilla Firefox"#
+    draw-border-with-background false
+    opacity 0.9
+}
+
 window-rule {
     match title="GGPoker"
     open-floating true

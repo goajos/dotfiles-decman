@@ -62,7 +62,6 @@
     "github.copilot.enable": {
         "*": false
     },
-    "python.defaultInterpreterPath": "c:\\Python314\\python.exe",
     // "ruff.configuration": "${workspaceFolder}/pyproject.toml",
     // "debugpy.debugJustMyCode": false,
 }
