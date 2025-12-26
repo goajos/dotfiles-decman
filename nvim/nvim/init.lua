@@ -120,6 +120,8 @@ else
     vim.opt.expandtab = true -- use spaces for tabs
     vim.opt.tabstop = 4 -- tab size
     vim.opt.softtabstop = 4 -- tab size insert mode
+    vim.opt.autoindent = true -- copy indent form cursorline
+    vim.opt.smartindent = true -- smart auto indenting
     vim.opt.cursorline = true -- highlight cursor line
     -- vim.opt.signcolumn = "number" -- show sign column in the number column
     vim.opt.colorcolumn = "100" -- show column line at 100 chars
@@ -128,6 +130,9 @@ else
     vim.opt.scrolloff = 10 -- keep 10 lines above/below cursor
     vim.opt.cmdheight = 0 -- linesize of the cmdline
     vim.opt.splitright = true -- split windows right by default
+
+    vim.opt.grepprg = "rg --vimgrep" -- use ripgrep
+    vim.opt.path:append("**") -- buildin fuzzy finding
 
     vim.pack.add { "https://github.com/nvim-treesitter/nvim-treesitter" }
     require'nvim-treesitter'.install({"python"})
@@ -170,6 +175,10 @@ else
       "https://github.com/projekt0n/github-nvim-theme"
     })
     vim.cmd[[colorscheme github_dark_default]]
+    -- remove nvim window background for parent opacity
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 
     vim.pack.add { "https://github.com/neovim/nvim-lspconfig" }
     vim.lsp.enable("ty")
