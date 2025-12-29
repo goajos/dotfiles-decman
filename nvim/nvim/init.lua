@@ -181,7 +181,24 @@ else
     vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 
     vim.pack.add { "https://github.com/neovim/nvim-lspconfig" }
+
+    -- TODO: setup the ts ls?
     vim.lsp.enable("ty")
     vim.lsp.enable("lua_ls")
+    -- TODO: set up roslyn_ls lua config?
+    -- vim.lsp.config("roslyn", dofile(vim.fn.stdpath("config") .. '/lsp/roslyn_ls.lua'))
+    -- TODO: copy the .dll to the local bin folder?
+    vim.lsp.config("roslyn", {
+        cmd = {
+            'dotnet',
+            '/home/jappe/.local/.bin/Microsoft.CodeAnalysis.LanguageServer.dll',
+            '--logLevel', -- this property is required by the server
+            'Information',
+            '--extensionLogDirectory', -- this property is required by the server
+            vim.fs.joinpath(vim.uv.os_tmpdir(), 'roslyn_ls/logs'),
+            '--stdio',
+        }
+    })
+    vim.lsp.enable("roslyn")
     vim.lsp.inlay_hint.enable(true)
 end

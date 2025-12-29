@@ -11,3 +11,8 @@ class Unity(Module):
         return [
             "unityhub" # The Unity Hub is a standalone application that streamlines the way you find, download, and manage your Unity Projects and installations.
         ]
+
+    def pacman_packages(self) -> list[str]:
+        return [
+            "dotnet-sdk", # The .NET Core SDK
+        ]
