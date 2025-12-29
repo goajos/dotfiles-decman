@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from decman import Module, Directory
+from decman import Directory, File, Module
 
 from config import USER
 

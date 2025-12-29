@@ -85,6 +85,7 @@ decman.modules += [
     Rust(),
     Shell(),
     Sound(),
+    Unity(),
     Waybar(),
     Zig(),
 ]
