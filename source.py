@@ -11,6 +11,7 @@ from devel.docker.source import Docker
 from devel.javascript.source import JavaScript
 from devel.python.source import Python
 from devel.rust.source import Rust
+from devel.unity.source import Unity
 from devel.zig.source import Zig
 from fonts.source import Fonts
 from fuzzel.source import Fuzzel
@@ -39,6 +40,7 @@ decman.aur_packages += [
     # "neovim-nightly-bin",  # NeoVim nightly build
     "paru",  # Feature packed AUR helper
     # "ty",  # An extremely fast Python type checker and language server, written in Rust.
+    # "unityhub", # The Unity Hub is a standalone application that streamlines the way you find, download, and manage your Unity Projects and installations.
     # "visual-studio-code-bin",  # Visual Studio Code (vscode) official binary version
     "yay"  # Yet another yogurt. Pacman wrapper and AUR helper written in go. (paru backup)
 ]

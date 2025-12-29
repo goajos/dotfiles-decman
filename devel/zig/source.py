@@ -4,7 +4,7 @@ from decman import Module
 
 class Zig(Module):
     def __init__(self):
-        super().__init__(name="rust", enabled=True, version="1")
+        super().__init__(name="zig", enabled=True, version="1")
 
     def pacman_packages(self) -> list[str]:
         return [
