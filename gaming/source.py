@@ -18,6 +18,12 @@ class Gaming(Module):
             f"/home/{USER}/Pictures/steam.png": File(
                 source_file="gaming/steam_app_default/steam.png"
             ),
+            f"/home/{USER}/.local/share/applications/steam_app_3062740.desktop": File(
+                source_file="gaming/galaxy/steam_app_3062740.desktop"
+            ),
+            f"/home/{USER}/Pictures/galaxy.png": File(
+                source_file="gaming/galaxy/galaxy.png"
+            ),
         }
 
     def directories(self) -> dict[str, Directory]:
