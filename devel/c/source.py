@@ -8,5 +8,5 @@ class C(Module):
 
     def pacman_packages(self) -> list[str]:
         return [
-            "clang" # C language family frontend for LLVM
+            "clang", # C language family frontend for LLVM
         ]

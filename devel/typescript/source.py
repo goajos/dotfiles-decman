@@ -2,9 +2,9 @@
 from decman import Module, sh
 
 
-class JavaScript(Module):
+class TypeScript(Module):
     def __init__(self):
-        super().__init__(name="javascript", enabled=True, version="1")
+        super().__init__(name="typescript", enabled=True, version="1")
 
     def pacman_packages(self) -> list[str]:
         return [

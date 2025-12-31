@@ -8,10 +8,12 @@ from alacritty.source import Alacritty
 from bluetooth.source import Bluetooth
 from config import USER
 from devel.c.source import C
+from devel.csharp.source import CSharp
 from devel.docker.source import Docker
-from devel.javascript.source import JavaScript
 from devel.python.source import Python
+from devel.raylib.source import Raylib
 from devel.rust.source import Rust
+from devel.typescript.source import TypeScript
 from devel.unity.source import Unity
 from devel.zig.source import Zig
 from fonts.source import Fonts
@@ -38,11 +40,7 @@ decman.config.enable_flatpak = False
 decman.config.enable_fpm = False
 decman.aur_packages += [
     "decman",  # Declarative package & configuration manager for Arch Linux.
-    # "neovim-nightly-bin",  # NeoVim nightly build
     "paru",  # Feature packed AUR helper
-    # "ty",  # An extremely fast Python type checker and language server, written in Rust.
-    # "unityhub", # The Unity Hub is a standalone application that streamlines the way you find, download, and manage your Unity Projects and installations.
-    # "visual-studio-code-bin",  # Visual Studio Code (vscode) official binary version
     "yay"  # Yet another yogurt. Pacman wrapper and AUR helper written in go. (paru backup)
 ]
 
@@ -70,6 +68,7 @@ decman.modules += [
     Alacritty(),
     Bluetooth(),
     C(),
+    CSharp(),
     Docker(),
     Fonts(),
     Fuzzel(),
@@ -84,6 +83,7 @@ decman.modules += [
     Pacman(),
     Perf(),
     Python(),
+    Raylib(),
     Rust(),
     Shell(),
     Sound(),

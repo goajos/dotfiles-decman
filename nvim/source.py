@@ -18,7 +18,6 @@ class Nvim(Module):
     def aur_packages(self) -> list[str]:
         return [
             "neovim-nightly-bin",  # NeoVim nightly build
-            "ty",  # An extremely fast Python type checker and language server, written in Rust.
         ]
 
     def pacman_packages(self) -> list[str]:

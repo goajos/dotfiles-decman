@@ -57,7 +57,6 @@
         "key": "ctrl+delete",
         "command": "workbench.action.terminal.kill"
     },
-    // TODO: call these from neovim with :move?
     {
         "key": "alt+k",
         "command": "editor.action.moveLinesUpAction",

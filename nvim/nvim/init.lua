@@ -47,9 +47,6 @@ if vim.g.vscode then
         vscode.action("workbench.action.findInFiles")
     end)
     -- buffers (=views)
-    vim.keymap.set("n", "<leader>bd", function()
-        vscode.action("workbench.action.closeActiveEditor")
-    end)
     vim.keymap.set("n", "<leader>bb", function()
         vscode.action("workbench.action.quickOpen")
     end)
@@ -100,6 +97,9 @@ if vim.g.vscode then
     -- file
     vim.keymap.set("n", "<leader>w", function()
         vscode.action("workbench.action.files.save")
+    end)
+    vim.keymap.set("n", "<leader>q", function()
+        vscode.action("workbench.action.closeActiveEditor")
     end)
 else
     -- TODO: set up undo dir?
@@ -189,7 +189,6 @@ else
 
     vim.lsp.enable("clangd")
     vim.lsp.enable("lua_ls")
-    -- TODO: copy the .dll to the local bin folder with decman?
     vim.lsp.config("roslyn", {
         cmd = {
             'dotnet',

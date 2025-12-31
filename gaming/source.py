@@ -5,7 +5,6 @@ from config import USER
 
 
 # TODO: what to do with the .exe files/installers?
-# TODO: what to do with app icons?
 class Gaming(Module):
     def __init__(self):
         super().__init__(name="gaming", enabled=True, version="1")

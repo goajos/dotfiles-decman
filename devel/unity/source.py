@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from decman import Directory, File, Module
+from decman import Directory, Module
 
 from config import USER
 
@@ -10,9 +10,4 @@ class Unity(Module):
     def aur_packages(self) -> list[str]:
         return [
             "unityhub" # The Unity Hub is a standalone application that streamlines the way you find, download, and manage your Unity Projects and installations.
-        ]
-
-    def pacman_packages(self) -> list[str]:
-        return [
-            "dotnet-sdk", # The .NET Core SDK
         ]

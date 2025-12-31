@@ -6,6 +6,11 @@ class Python(Module):
     def __init__(self):
         super().__init__(name="python", enabled=True, version="1")
 
+    def aur_packages(self) -> list[str]:
+        return [
+            "ty",  # An extremely fast Python type checker and language server, written in Rust.
+        ]
+
     def pacman_packages(self) -> list[str]:
         return [
             "python",  # The Python programming language
