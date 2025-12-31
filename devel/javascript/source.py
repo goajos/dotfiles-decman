@@ -9,6 +9,7 @@ class JavaScript(Module):
     def pacman_packages(self) -> list[str]:
         return [
             "npm",  # JavaScript package manager
+            "typescript-language-server", # Language Server Protocol (LSP) implementation for TypeScript using tsserver
         ]
 
     def on_enable(self) -> None:

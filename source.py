@@ -7,6 +7,7 @@ import decman.config
 from alacritty.source import Alacritty
 from bluetooth.source import Bluetooth
 from config import USER
+from devel.c.source import C
 from devel.docker.source import Docker
 from devel.javascript.source import JavaScript
 from devel.python.source import Python
@@ -68,6 +69,7 @@ decman.packages += base_system_packages + base_util_packages
 decman.modules += [
     Alacritty(),
     Bluetooth(),
+    C(),
     Docker(),
     Fonts(),
     Fuzzel(),

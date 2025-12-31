@@ -107,7 +107,7 @@ else
     vim.g.maplocalleader = " " -- space local leader key
     vim.keymap.set("n", "<Space>", "<Nop>", { desc = "Don't move cursor when using leader key" })
     vim.opt.clipboard = "unnamedplus" -- use system clipboard:
-    vim.keymap.set("v", "<leader>p", '"_dp') -- paste without overwriting the register
+    vim.keymap.set("v", "<leader>p", '"_dp', { desc = "Paste without overwriting the register" })
     vim.opt.ignorecase = true -- case-insensitive search
     vim.opt.smartcase = true  -- case-sensitive if uppercase in search term
     vim.opt.hlsearch = true   -- highlight search results
@@ -135,7 +135,12 @@ else
     vim.opt.path:append("**") -- buildin fuzzy finding
 
     vim.pack.add { "https://github.com/nvim-treesitter/nvim-treesitter" }
-    require'nvim-treesitter'.install({"python"})
+    require'nvim-treesitter'.install({
+        "c_sharp",
+        "cpp",
+        "python",
+        "typescript"
+    })
 
     vim.opt.foldmethod = "expr"
     vim.opt.foldexpr =  "v:lua.vim.treesitter.foldexpr()"
@@ -182,12 +187,9 @@ else
 
     vim.pack.add { "https://github.com/neovim/nvim-lspconfig" }
 
-    -- TODO: setup the ts ls?
-    vim.lsp.enable("ty")
+    vim.lsp.enable("clangd")
     vim.lsp.enable("lua_ls")
-    -- TODO: set up roslyn_ls lua config?
-    -- vim.lsp.config("roslyn", dofile(vim.fn.stdpath("config") .. '/lsp/roslyn_ls.lua'))
-    -- TODO: copy the .dll to the local bin folder?
+    -- TODO: copy the .dll to the local bin folder with decman?
     vim.lsp.config("roslyn", {
         cmd = {
             'dotnet',
@@ -200,5 +202,11 @@ else
         }
     })
     vim.lsp.enable("roslyn")
+    vim.lsp.enable("ts_ls")
+    vim.lsp.enable("ty")
     vim.lsp.inlay_hint.enable(true)
+
+    -- file
+    vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save current buffer" })
+    vim.keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Close current buffer" })
 end
