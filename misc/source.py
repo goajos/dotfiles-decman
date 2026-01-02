@@ -31,5 +31,6 @@ class Misc(Module):
             "bitwarden",  # A secure and free password manager for all of your devices
             "discord",  # All-in-one voice and text chat for gamers
             "firefox",  # Fast, Private & Safe Web Browser
+            "gimp", # GNU Image Manipulation Program
             "thunderbird",  # Standalone mail and news reader from mozilla.org
         ]

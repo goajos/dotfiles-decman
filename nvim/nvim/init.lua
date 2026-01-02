@@ -156,7 +156,11 @@ else
 
     -- auto leave insert mode when changing windows or nvim losing focus
     vim.api.nvim_create_autocmd({"WinLeave", "FocusLost"}, {
-        command = "stopinsert"
+        callback = function()
+            if vim.bo.buftype ~= "terminal" then
+                vim.cmd("stopinsert")
+            end
+        end
     })
 
     -- show sign/number only in active window
@@ -184,7 +188,7 @@ else
     -- vim.g.netrw_keepdir = 0 -- keep current dir and browse dir synced
     vim.g.netrw_banner = 0 -- disable banner
     vim.g.netrw_liststyle = 3 -- tree style listing
-    vim.g.netrw_winsize = 15 -- window size of the explorer
+    vim.g.netrw_winsize = 18 -- window size of the explorer
 
     vim.pack.add({
       "https://github.com/projekt0n/github-nvim-theme"
@@ -229,7 +233,7 @@ else
     -- file/buffers
     vim.keymap.set("n", "<Esc>", function()
         if vim.bo.filetype == "netrw" then
-            vim.cmd("bd")
+            vim.cmd("q")
         end
     end)
     vim.keymap.set("n", "<Leader>f", ":Lex<CR>", { desc = "Open netrw file explorer" })

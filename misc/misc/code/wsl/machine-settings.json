@@ -1,4 +1,0 @@
-// ln -s ~/Repositories/dotfiles/misc/code/wsl/machine-settings.json ~/.vscode-server/data/Machine/settings.json
-{
-    "files.dialog.defaultPath": "/home/jappe/Repositories",
-}
